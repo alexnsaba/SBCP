@@ -151,7 +151,34 @@
 </div>
 </nav><br/>
 <div class="pcoded-content">
+<div class="page-header card">
+<div class="row align-items-end">
+<div class="col-lg-8">
+<div class="page-header-title">
+<div class="d-inline">
+@yield('pageHeader')
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body navbar-page">
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-block">
 @yield('content')
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <!-- Page content here-->
 <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>

@@ -22,3 +22,9 @@ Route::get('/Predictions', function () {
 Route::get('Visualisations/', function () {
     return view('visualisation');
 });
+Route::get('predictionResults',function(){
+    return view('Results');
+});
+Route::get('patientDetails',function(){
+   return view('PatientDetails');
+});
