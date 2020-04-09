@@ -28,3 +28,4 @@ Route::get('predictionResults',function(){
 Route::get('patientDetails',function(){
    return view('PatientDetails');
 });
+Route::get('chart','ChartController@index');
