@@ -1,14 +1,15 @@
-@extends('dashboard.master')
-@section('title')
-Visualisations
-@endsection
-@section('pageHeader')
-<h3 class="card-header">Breast Cancer Graphical Visualization</h3> 
-@endSection
-@section('content')
-<div class="card-body">
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highcharts Example - codechief.org</title>
+</head>
+   
+<body>
+
 <div id="container"></div>
-</div>
+</body>
+  
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
 <script type="text/javascript">
@@ -16,7 +17,7 @@ Visualisations
    
     Highcharts.chart('container', {
       chart: {
-        type: 'bar'
+        type: 'column'
     },
         title: {
             text: 'New User Growth, 2019'
@@ -49,8 +50,8 @@ Visualisations
             data: users
         },
         {
-        //name: 'Tokyo',
-        //data: [49.9]
+        name: 'Tokyo',
+        data: [49.9]
 
     }],
         responsive: {
@@ -69,4 +70,4 @@ Visualisations
         }
 });
 </script>
-@endsection
+</html>

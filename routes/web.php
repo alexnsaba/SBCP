@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,14 +11,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('predictions');
 });
 Route::get('/Predictions', function () {
     return view('predictions');
 });
-Route::get('Visualisations/', function () {
+ Route::get('Visualisations/', function () {
     return view('visualisation');
 });
 Route::get('predictionResults',function(){
@@ -28,4 +26,7 @@ Route::get('predictionResults',function(){
 Route::get('patientDetails',function(){
    return view('PatientDetails');
 });
-Route::get('chart','ChartController@index');
+Route::get('charts', 'ChartController@index')->name('chart.index');
+
+
+
