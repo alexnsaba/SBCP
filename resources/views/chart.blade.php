@@ -16,7 +16,7 @@ Visualisations
    
     Highcharts.chart('container', {
       chart: {
-        type: 'bar'
+        type: 'column'
     },
         title: {
             text: 'New User Growth, 2019'

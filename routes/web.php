@@ -27,6 +27,7 @@ Route::get('patientDetails',function(){
    return view('PatientDetails');
 });
 Route::get('charts', 'ChartController@index')->name('chart.index');
+Route::get('records','RecordsView@index');
 
 
 
