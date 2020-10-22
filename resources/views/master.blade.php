@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from colorlib.com/polygon/admindek/default/animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:02:24 GMT -->
+<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:00:19 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <title>SBCP | @yield('title')</title>
-
-
 <!--[if lt IE 10]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-<meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+<meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
 <meta name="author" content="colorlib" />
-<script src="https://code.highcharts.com/highcharts.js"></script>
-
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -31,36 +27,12 @@
 
 <link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/icon/themify-icons/themify-icons.css">
+<link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
 
-<link rel="stylesheet" type="text/css" href="../files/bower_components/animate.css/css/animate.css">
-
-<link rel="stylesheet" type="text/css" href="../files/assets/icon/icofont/css/icofont.css">
-
-<link rel="stylesheet" type="text/css" href="../files/assets/icon/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../files/bower_components/chartist/css/chartist.css" type="text/css" media="all">
 
 <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="../files/assets/css/pages.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/5ed7aa1b5d.js" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script>
-    function previewFile(input){
-        var file = $("input[type=file]").get(0).files[0];
-
-        if(file){
-            var reader = new FileReader();
-
-            reader.onload = function(){
-                $("#previewImg").attr("src", reader.result);
-            }
-
-            reader.readAsDataURL(file);
-        }
-    }
-</script>
+<link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
 </head>
 <body>
 
@@ -153,7 +125,6 @@
 </div>
 </div>
 </nav>
-
 <div class="pcoded-main-container">
 <div class="pcoded-wrapper">
 
@@ -171,7 +142,7 @@
 </li>
 <li class="pcoded-hasmenu active pcoded-trigger">
 <a href="Visualisations" class="waves-effect waves-dark">
-<span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-chart-line"></i></span>
+<span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-area-chart" aria-hidden="true"></i></span>
 <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Analysis</span>
 </a>
 </li>
@@ -209,37 +180,35 @@
 </div>
 </div>
 </div>
+<!-- Page content here-->
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
+<script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
+<script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
 
+<script src="../files/assets/pages/waves/js/waves.min.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
 
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+<script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
-<script src="../files/assets/pages/waves/js/waves.min.js" type="26dfe7f3f4fe4ac076b34b38-text/javascript"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.categories.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="../files/assets/pages/chart/float/curvedLines.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
 
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+<script src="../files/bower_components/chartist/js/chartist.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
 
-<script src="../files/assets/pages/waves/js/waves.min.js" type="26dfe7f3f4fe4ac076b34b38-text/javascript"></script>
+<script src="../files/assets/pages/widget/amchart/amcharts.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="../files/assets/pages/widget/amchart/serial.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="../files/assets/pages/widget/amchart/light.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
 
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/modernizr/js/modernizr.js"></script>
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/modernizr/js/css-scrollbars.js"></script>
+<script src="../files/assets/js/pcoded.min.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="../files/assets/js/vertical/vertical-layout.min.js" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/assets/pages/dashboard/custom-dashboard.min.js"></script>
+<script type="da54ea6e450b9f28d7f87301-text/javascript" src="../files/assets/js/script.min.js"></script>
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="da54ea6e450b9f28d7f87301-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+-->
+</body>
 
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/assets/js/animation.js"></script>
-<script src="../files/assets/js/pcoded.min.js" type="26dfe7f3f4fe4ac076b34b38-text/javascript"></script>
-<script src="../files/assets/js/vertical/vertical-layout.min.js" type="26dfe7f3f4fe4ac076b34b38-text/javascript"></script>
-<script src="../files/assets/js/jquery.mCustomScrollbar.concat.min.js" type="26dfe7f3f4fe4ac076b34b38-text/javascript"></script>
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/assets/js/script.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="26dfe7f3f4fe4ac076b34b38-text/javascript"></script>
-<script type="26dfe7f3f4fe4ac076b34b38-text/javascript">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
-<script src="../ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="26dfe7f3f4fe4ac076b34b38-|49" defer=""></script></body>
-
-<!-- Mirrored from colorlib.com/polygon/admindek/default/animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:02:24 GMT -->
 </html>
