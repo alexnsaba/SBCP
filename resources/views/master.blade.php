@@ -33,6 +33,7 @@
 
 <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
+
 </head>
 <body>
 

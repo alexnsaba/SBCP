@@ -46,6 +46,9 @@
   <script src="https://kit.fontawesome.com/5ed7aa1b5d.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+
   <script>
     function previewFile(input){
         var file = $("input[type=file]").get(0).files[0];
@@ -209,6 +212,9 @@
 </div>
 </div>
 </div>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 <script type="26dfe7f3f4fe4ac076b34b38-text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
