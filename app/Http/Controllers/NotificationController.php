@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\PatientRevisit;
+use App\User;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Notification;
+
+use Illuminate\Notifications\Notification;
 
 class NotificationController extends Controller
 {
@@ -28,7 +33,7 @@ class NotificationController extends Controller
             'offer_id' => 007
         ];
 
-        Notification::send($userSchema, new OffersNotification($offerData));
+        Notification::send($userSchema, new PatientRevisit($offerData));
 
         dd('Task completed!');
     }
