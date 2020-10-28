@@ -5,7 +5,7 @@
 
 <p align="center">
 
-<img src='flask-app/sample.png'>
+<img src='images.jpeg'>
 
 </p>
 
