@@ -28,6 +28,7 @@ Route::get('patientDetails',function(){
 });
 Route::get('charts', 'ChartController@index')->name('chart.index');
 Route::get('records','RecordsView@index');
+Route::post('save','RecordsView@saveDetails');
 
 
 
