@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PredictController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('predictions');
 });
+
+Route::get('send-notification', 'NotificationController@sendOfferNotification');
+
 Route::get('/Predictions', function () {
     return view('predictions');
 });
+
+Route::post('/predict',[PredictController::class, 'getPrediction'])->name('imagePredict');
+
 Route::get('Visualisations/', function () {
     return view('visualisation');
 });
@@ -29,3 +35,7 @@ Route::get('patientDetails',function(){
    return view('PatientDetails');
 });
 Route::get('chart','ChartController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
