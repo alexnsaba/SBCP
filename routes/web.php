@@ -26,8 +26,21 @@ Route::get('predictionResults',function(){
 Route::get('patientDetails',function(){
    return view('PatientDetails');
 });
-Route::get('charts', 'ChartController@index')->name('chart.index');
-Route::get('records','RecordsView@index');
+Route::post('chart', 'ChartController@drawCharts');
+Route::post('chart_by_year', 'ChartController@drawChartsByYear');
+
+Route::post ( '/search','SearchController@Search');
 
 
 
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

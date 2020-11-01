@@ -17,7 +17,8 @@ class CreatePredictionsTable extends Migration
             $table->id();
             $table->integer('Results');
             $table->string('Clinical_notes');
-            $table->binary('image');
+            $table->string('image');
+            $table->string('region');
             $table->bigInteger('Patient_id');
             $table->bigInteger('Doctor_id');
             $table->timestamps();
