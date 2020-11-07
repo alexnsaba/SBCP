@@ -22,8 +22,7 @@ Route::get('/Predictions', function () {
     return view('predictions');
 });
 
-Route::post('/predict',[PredictController::class, 'getPrediction'])->name('imagePredict');
-
+Route::post('/predict','PredictController@getPrediction');
 Route::get('Visualisations/', function () {
     return view('visualisation');
 });

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PredictController extends Controller
 {
     public function getImage(){
-        return view("predictions");
+        dd("testing");
     }
     public function getPrediction(Request $request){
         $request->validate([
@@ -17,7 +17,7 @@ class PredictController extends Controller
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $client = new Client();
-        $imageUrl = "/home/arnoldkk/Desktop/FinalYearProject/SBCP/public/images/".$imageName;
+        $imageUrl = "/home/alex/Desktop/SBCP/public/images/".$imageName;
         $res = $client->request('POST', "http://127.0.0.1:5000/upload", [
             'multipart' => [
                 [
@@ -26,7 +26,7 @@ class PredictController extends Controller
                         'Content-Disposition'   => 'form-data; name="image"; filename=$imageUrl',
                     ],
                     'name'     => 'image',
-                    'contents' => file_get_contents("/home/arnoldkk/Desktop/FinalYearProject/SBCP/public/images/".$imageName),
+                    'contents' => file_get_contents("/home/alex/Desktop/SBCP/public/images/".$imageName),
                 ],
             ],
         ]);
