@@ -7,7 +7,8 @@ Predictions
 @endSection
 @section('content')
   <div class="card-body">
-  <form method="post" action="">
+      <form action="{{ route('imagePredict') }}" method="POST" enctype="multipart/form-data">
+          @csrf
   <div class="form-group">
     <label for="Image">Upload Mammogram Image</label>
     <input type="file" class="form-control form-control-primary" id="image" accept="image/*" onchange="previewFile(this);" required>
