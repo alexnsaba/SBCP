@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\PatientRevisit;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -64,10 +65,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $registered_user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+
+//        return User::create([
+//            'name' => $data['name'],
+//            'email' => $data['email'],
+//            'password' => Hash::make($data['password']),
+//        ]);
+        $when = now()->addMinutes(10);
+        $registered_user->notify((new PatientRevisit())->delay($when));
+        return $registered_user;
     }
 }

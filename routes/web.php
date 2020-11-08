@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('send-notification', 'NotificationController@sendOfferNotification');
-
+Route::get('mail','Home@index');
 Route::get('/Predictions', function () {
     return view('predictions');
 });
