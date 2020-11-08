@@ -1,45 +1,56 @@
 @extends('dashboard.master')
 @section('title')
-Visualisations
+    Visualisations
 @endsection
 @section('pageHeader')
-<h3 class="card-header">Breast Cancer Graphical Visualization</h3> 
+    <h3 class="card-header">Breast Cancer Graphical Visualization</h3>
 @endSection
 @section('content')
-  <div class="card-body">
-  <form class="form-inline" method ="post" action="">
-  <div class="form-group mb-2">
-    <label for="date1">From&nbsp;</label>&nbsp;
-    <input type="date" name="date1" class="form-control-date form-control-primary" id="date1" name="date1" required>
-  </div>
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="date2"> To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>&nbsp;
-    <input type="date" name = "date2" class="form-control-date form-control-primary" id="date2" name="date2" required>
-  </div>
-  <button type="submit" class="btn btn-primary mb-2 btn-out-dashed">View Graphs</button>&nbsp;
-  <button type="reset"  class="btn btn-danger mb-2 btn-out-dashed">Cancel</button>
-</form>
-  </div>
-  <div class="card-body">
-<div class="card latest-update-card">
-<div class="card-header">
-<h3>Charts</h3>
-<div class="card-header-right">
-<ul class="list-unstyled card-option">
-<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li><i class="feather icon-chevron-left open-card-option"></i></li>
-</ul>
-</div>
-</div>
-<h3>Graphs will go here Graphs will go here Graphs will go here Graphs will go here</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <!--Visualise by date -->
+    <div class="card-body">
+        <h4>Visualise by Date</h4>
+        <form class="form-inline" method="post" action="/chart">
+            @csrf
+            <div class="form-group mb-2">
+                <label for="date1">From&nbsp;</label>&nbsp;
+                <input type="date" name="date1" class="form-control-date form-control-primary" id="date1" name="date1"
+                    required>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="date2"> To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>&nbsp;
+                <input type="date" name="date2" class="form-control-date form-control-primary" id="date2" name="date2"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2 btn-out-dashed">View Graphs</button>&nbsp;
+            <button type="reset" class="btn btn-danger mb-2 btn-out-dashed">Reset</button>
+        </form>
+    </div>
+    <!--Visualise by year -->
+    <div class="card-body">
+        <h4>Visualise by Year</h4>
+
+        <form class="form-inline" method="post" action="/chart_by_year">
+            @csrf
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Choose Year</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="year" value="year" required>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                </select>
+            </div> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+
+            <button type="submit" class="btn btn-primary mb-2 btn-out-dashed">View Graphs</button>
+        </form>
+    </div>
 @endsection

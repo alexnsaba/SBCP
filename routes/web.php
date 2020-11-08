@@ -12,7 +12,6 @@ use App\Http\Controllers\PredictController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('predictions');
 });
@@ -34,7 +33,10 @@ Route::get('predictionResults',function(){
 Route::get('patientDetails',function(){
    return view('PatientDetails');
 });
-Route::get('chart','ChartController@index');
+Route::post('chart', 'ChartController@drawCharts');
+Route::post('chart_by_year', 'ChartController@drawChartsByYear');
+
+Route::post ( '/search','SearchController@Search');
 
 Auth::routes();
 
