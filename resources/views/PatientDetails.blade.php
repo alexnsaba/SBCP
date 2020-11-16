@@ -4,16 +4,16 @@ Predictions
 @endsection
 @section('pageHeader')
 @include('message')
-<h3 class="card-header">Save Patient's Details</h3> 
+<h3 class="card-header">Save Patient's Details</h3>
 @endSection
 @section('content')
-<div class="card-body">  
+<div class="card-body">
 <form method="post" action ="/save" enctypt="multipart/form-data">
 @csrf
 <div class="form-group row">
 <label class="col-sm-2 col-form-label">Results</label>
 <div class="col-sm-10">
-<input type="number" name="results" class="form-control form-control-primary" placeholder="Eg. 1 for positive or 0 for negative" required>
+<input type="text" readonly name="results" class="form-control form-control-primary" value="{{ session()->get('class') }}" required>
 </div>
 </div>
 <div class="form-group row">
@@ -22,6 +22,12 @@ Predictions
 <textarea rows="5" cols="5" name="clinical_notes" class="form-control form-control-primary" required></textarea>
 </div>
 </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Image Url</label>
+        <div class="col-sm-10">
+            <input type="text" readonly name="image" class="form-control form-control-primary" value="{{ session()->get('image') }}" required>
+        </div>
+    </div>
 <!--
 <div class="form-group row">
  <label class="col-sm-2 col-form-label">Upload Mammogram Image</label>

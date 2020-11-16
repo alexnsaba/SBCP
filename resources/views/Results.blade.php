@@ -19,7 +19,7 @@ Predictions
 </thead>
 <tbody>
 <td>{{$predicted_class}}</td>
-<td>{{$accuracy}}</td>
+<td>{{$accuracy}} %</td>
 </tbody>
 </table>
 </div>

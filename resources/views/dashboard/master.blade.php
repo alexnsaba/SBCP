@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from colorlib.com/polygon/admindek/default/animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:02:24 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-
 <head>
     <title>SBCP | @yield('title')</title>
-
 
     <!--[if lt IE 10]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -157,7 +151,7 @@
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="../files/assets/images/alex.png" class="img-radius"
                                             alt="User-Profile-Image">
-                                        <span>Niyonsaba Alex</span>
+                                        <span> {{ Auth::user()->name }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
@@ -178,9 +172,21 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="feather icon-log-out"></i> Logout
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                <i class="feather icon-log-out" ></i> Logout
+
+{{--                                                {{ __('Logout') }}--}}
                                             </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+
+{{--                                            <a href="{{ route('logout') }}">--}}
+{{--                                                <i class="feather icon-log-out" ></i> Logout--}}
+{{--                                            </a>--}}
                                         </li>
                                     </ul>
                                 </div>
