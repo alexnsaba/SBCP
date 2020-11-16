@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 class Prediction extends Model
 {
+
+    //
+    protected $fillable = ['Results', 'Clinical_notes','Patient_id','Doctor_id','region'];
+
     use Notifiable;
     use SearchableTrait;
     protected $searchable = [
@@ -15,4 +19,5 @@ class Prediction extends Model
             'predictions.region' => 10,
         ]
     ];
+
 }
