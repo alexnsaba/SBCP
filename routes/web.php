@@ -16,7 +16,11 @@ Route::get('/', function () {
     return view('predictions');
 })->middleware('auth');
 
+
 Route::get('send-notification', 'NotificationController@sendOfferNotification')->middleware('auth');
+
+
+
 
 Route::get('/Predictions', function () {
     return view('predictions');

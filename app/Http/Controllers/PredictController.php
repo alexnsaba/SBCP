@@ -11,9 +11,12 @@ class PredictController extends Controller
         return view("predictions");
     }
     public function getPrediction(Request $request){
+
 //        $request->validate([
 //            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 //        ]);
+
+
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $client = new Client();
