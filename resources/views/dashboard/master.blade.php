@@ -188,6 +188,7 @@
 {{--                                                <i class="feather icon-log-out" ></i> Logout--}}
 {{--                                            </a>--}}
                                         </li>
+
                                     </ul>
                                 </div>
                             </li>
@@ -217,6 +218,12 @@
                                             <span class="pcoded-micon" style="font-size:20pt"><i
                                                     class="fa fa-chart-line"></i></span>
                                             <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="pcoded-hasmenu active pcoded-trigger">
+                                        <a href="managepatients" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-area-chart" aria-hidden="true"></i></span>
+                                            <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Manage Patients</span>
                                         </a>
                                     </li>
                                 </ul>

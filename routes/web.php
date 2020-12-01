@@ -34,9 +34,13 @@ Route::get('Visualisations/', function () {
 Route::get('predictionResults',function(){
     return view('Results');
 })->middleware('auth');
-Route::get('patientDetails',function(){
-   return view('PatientDetails');
-})->middleware('auth');
+//Route::get('patientDetails',function(){
+//   return view('PatientDetails');
+//})->middleware('auth');
+
+Route::get('patientDetails', 'PatientController@index')->middleware('auth');
+
+
 
 Route::get('charts', 'ChartController@index')->name('chart.index')->middleware('auth');
 Route::get('records','RecordsView@index')->middleware('auth');
@@ -50,3 +54,22 @@ Route::post ( '/search','SearchController@Search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//Route::get('managepatients', 'PatientController@open')->middleware('auth');
+
+//Route::get('managepatients',function(){
+//    return view('managepatients');
+//});
+
+
+
+Route::post('addpatient','PatientController@savePatientDetails');
+Route::get('managepatients','PatientController@displayPatients');
+Route::get('delete','PatientController@deletepatient');
+Route::get('delete/{id}','PatientController@deletepatient');
+
+
+
+

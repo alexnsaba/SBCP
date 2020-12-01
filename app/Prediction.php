@@ -19,5 +19,13 @@ class Prediction extends Model
             'predictions.region' => 10,
         ]
     ];
+    public function doctor()
+    {
+        return $this->hasOne('App\Prediction');
+    }
+    public function user()
+    {
+        return $this->hasOne('App\User');
+    }
 
 }

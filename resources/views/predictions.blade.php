@@ -20,7 +20,7 @@ Predictions
   <img id="previewImg" src="/examples/images/transparent.png">
   </center><br/>
  <center>
-  <button type="submit" class="btn btn-primary btn-out-dashed">Submit</button>
+  <button type="submit" class="btn btn-primary btn-out-dashed">Predict</button>
   <!--
   <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
   -->

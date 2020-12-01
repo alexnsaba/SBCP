@@ -51,6 +51,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'username' => ['required', 'string', 'max:25'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -66,20 +67,22 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $registered_user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-
-
-//        return User::create([
+//        $registered_user = User::create([
+//            'username' => $data['username'],
 //            'name' => $data['name'],
 //            'email' => $data['email'],
 //            'password' => Hash::make($data['password']),
 //        ]);
-        $when = now()->addMinutes(10);
-        $registered_user->notify((new PatientRevisit())->delay($when));
-        return $registered_user;
+
+
+        return User::create([
+            'username' => $data['username'],
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+//        $when = now()->addMinutes(10);
+//        $registered_user->notify((new PatientRevisit())->delay($when));
+//        return $registered_user;
     }
 }
