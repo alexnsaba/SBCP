@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from colorlib.com/polygon/admindek/default/animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:02:24 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-
 <head>
     <title>SBCP | @yield('title')</title>
-
 
     <!--[if lt IE 10]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -178,10 +172,23 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="feather icon-log-out"></i> Logout
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                <i class="feather icon-log-out" ></i> Logout
+
+{{--                                                {{ __('Logout') }}--}}
                                             </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+
+{{--                                            <a href="{{ route('logout') }}">--}}
+{{--                                                <i class="feather icon-log-out" ></i> Logout--}}
+{{--                                            </a>--}}
                                         </li>
+
                                     </ul>
                                 </div>
                             </li>
@@ -198,11 +205,10 @@
                             <div class="pcoded-inner-navbar main-menu">
 
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu active pcoded-trigger">
+                                    <li class="pcoded-hasmenu active">
                                         <a href="Predictions" class="waves-effect waves-dark">
                                             <!-- <i class="feather icon-home"> -->
-                                            <span class="pcoded-micon" style="font-size:20pt"><i
-                                                    class="fa fa-stethoscope"></i></span>
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-stethoscope"></i></span>
                                             <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Predictions</span>
                                         </a>
                                     </li>
@@ -211,6 +217,12 @@
                                             <span class="pcoded-micon" style="font-size:20pt"><i
                                                     class="fa fa-chart-line"></i></span>
                                             <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="pcoded-hasmenu active pcoded-trigger">
+                                        <a href="managepatients" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                            <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Manage Patients</span>
                                         </a>
                                     </li>
                                 </ul>
