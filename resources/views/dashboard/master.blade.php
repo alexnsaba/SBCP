@@ -205,11 +205,10 @@
                             <div class="pcoded-inner-navbar main-menu">
 
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu active pcoded-trigger">
+                                    <li class="pcoded-hasmenu active">
                                         <a href="Predictions" class="waves-effect waves-dark">
                                             <!-- <i class="feather icon-home"> -->
-                                            <span class="pcoded-micon" style="font-size:20pt"><i
-                                                    class="fa fa-stethoscope"></i></span>
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-stethoscope"></i></span>
                                             <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Predictions</span>
                                         </a>
                                     </li>
@@ -222,8 +221,8 @@
                                     </li>
                                     <li class="pcoded-hasmenu active pcoded-trigger">
                                         <a href="managepatients" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-area-chart" aria-hidden="true"></i></span>
-                                            <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Manage Patients</span>
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                            <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Manage Patients</span>
                                         </a>
                                     </li>
                                 </ul>

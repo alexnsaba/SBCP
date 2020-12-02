@@ -56,7 +56,7 @@ class RecordsView extends Controller
         $request->session()->forget('image');
 
 
-        return redirect('/patientDetails')->with('success','Patient Details successfully added.');
+        return redirect('/Predictions')->with('success','Patient Details successfully added.');
 //        return dd($region[0]->region);
 
     }
