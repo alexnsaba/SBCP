@@ -21,6 +21,7 @@ class CreatePredictionsTable extends Migration
             $table->string('region');
             $table->bigInteger('Patient_id');
             $table->bigInteger('Doctor_id');
+           // $table->timestamps();
             $table->timestamps();
         });
     }

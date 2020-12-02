@@ -17,9 +17,9 @@ class CreatePatientsTable extends Migration
             $table->id();
             $table->string('Name');
             $table->string('Location');
-            $table->string('Phone_number');
-            $table->string('Email');
-            $table->string('Date_of_notification');            
+            $table->string('Phone_number')->unique();
+            $table->string('Email')->unique();
+            $table->string('Date_of_notification')->nullable();
             $table->timestamps();
         });
     }

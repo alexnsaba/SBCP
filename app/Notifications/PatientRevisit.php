@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notification;
 class PatientRevisit extends Notification
 {
     use Queueable;
-    private $patientData;
+//    private $patientData;
 
 
     /**
@@ -18,9 +18,9 @@ class PatientRevisit extends Notification
      *
      * @return void
      */
-    public function __construct($patientData)
+    public function __construct()
     {
-        $this->patientData = $patientData;
+//        $this->patientData = $patientData;
 
         //
     }
@@ -49,12 +49,26 @@ class PatientRevisit extends Notification
 //                    ->action('Notification Action', url('/'))
 //                    ->line('Thank you for using our application!');
 
+//        return (new MailMessage)
+//            ->name($this->patientData['name'])
+//            ->line($this->patientData['body'])
+//            ->action($this->patientData['offerText'], $this->patientData['offerUrl'])
+//            ->line($this->patientData['thanks']);
+        // This will be sent in mail notification
         return (new MailMessage)
-            ->name($this->patientData['name'])
-            ->line($this->patientData['body'])
-            ->action($this->patientData['offerText'], $this->patientData['offerUrl'])
-            ->line($this->patientData['thanks']);
+            ->line("Congrats, You have successfully registered on another website. If you can't find login link then
+                                please click on the big damn button we tailored for you!")
+            ->from('kalemarnld@gmail.com', 'Sender')
 
+            ->action('Login Now', url('/login'))
+            ->line('Thank you for using our application!');
+
+    }
+    public function toDatabase($notifiable) {
+        // This will be stored in Database, You'll fetch this notification later to display in application
+        return [
+            'body' => 'Yaay! You made it to here! You logged in to view the notification, SO damn Nice!',
+        ];
     }
 
     /**
@@ -66,7 +80,7 @@ class PatientRevisit extends Notification
     public function toArray($notifiable)
     {
         return [
-            'patient_id' => $this->patientData['patient_id']
+//            'patient_id' => $this->patientData['patient_id']
         ];
     }
 }
