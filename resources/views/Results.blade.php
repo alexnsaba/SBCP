@@ -19,13 +19,13 @@ Predictions
 </thead>
 <tbody>
 <td>{{$predicted_class}}</td>
-<td>{{$accuracy}}</td>
+<td>{{$accuracy}} %</td>
 </tbody>
 </table>
 </div>
 
 <center>
-  <a href="patientDetails"><button class="btn btn-primary btn-out-dashed">Save Patient's details</button></a>
+  <a href="patientDetails"><button class="btn btn-primary btn-out-dashed">Save Prediction Results</button></a>
   <a href="Predictions"><button  class="btn btn-danger btn-out-dashed">Cancel</button></a>
 </center>
   </div>

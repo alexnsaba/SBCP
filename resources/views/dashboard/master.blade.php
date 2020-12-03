@@ -151,7 +151,7 @@
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <img src="../files/assets/images/alex.png" class="img-radius"
                                             alt="User-Profile-Image">
-                                        <span>Niyonsaba Alex</span>
+                                        <span> {{ Auth::user()->name }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
