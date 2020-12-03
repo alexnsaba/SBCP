@@ -11,8 +11,7 @@
                     <form method="POST" class="md-float-material form-material" action="{{ route('login') }}">
                         @csrf
                         <div class="text-center">
-                            <span style="font-size: 25px"><img src="../files/assets/images/logo.ico" height="100" width="100" class="img-radius" alt="logo.png">
-                            Smart Breast Cancer Predictor</span>
+                            <span style="font-size: 25px">Smart Breast Cancer Predictor</span>
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">
@@ -21,6 +20,7 @@
                                         <h3 class="text-center txt-primary">{{ __('Login') }}</h3>
                                     </div>
                                 </div>
+                                {{--
                                 <div class="row m-b-20">
                                     {{-- <div class="col-md-6">
                                         --}}
@@ -34,7 +34,9 @@
                                             class="btn btn-twitter m-b-20 btn-block"><i
                                                 class="icofont icofont-social-twitter"></i>twitter</button>--}}
                                         {{-- </div>--}}
+                                         {{--
                                 </div>
+                                --}}
 
                                 <div class="form-group form-primary">
                                     <input id="username" type="text" name="username"
