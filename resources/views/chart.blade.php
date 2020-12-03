@@ -79,7 +79,7 @@ Visualisations
               0: { label: 'Number of People diagnosed'} // y-axis.
             }
           },
-          bar: { groupWidth: "90%" },
+          bar: { groupWidth: "90%"},
 
         };
 
