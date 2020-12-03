@@ -17,7 +17,7 @@ Predictions
     <small id="imageHelp" class="form-text text-muted">** Strictly, Only mammogram images should be uploaded</small>
   </div>
   <center>
-  <img id="previewImg" src="/examples/images/transparent.png">
+{{--  <img id="previewImg" src="/examples/images/transparent.png">--}}
   </center><br/>
  <center>
   <button type="submit" class="btn btn-primary btn-out-dashed">Predict</button>

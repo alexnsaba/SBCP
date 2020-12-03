@@ -14,7 +14,7 @@ use App\Http\Controllers\PredictController;
 */
 Route::get('/', function () {
     return view('predictions');
-})->middleware('auth');
+})->middleware('auth')->middleware('verified');
 
 
 Route::get('send-notification', 'NotificationController@sendOfferNotification')->middleware('auth');
@@ -51,7 +51,9 @@ Route::post('chart_by_year', 'ChartController@drawChartsByYear')->middleware('au
 
 Route::post ( '/search','SearchController@Search');
 
-Auth::routes();
+//Auth::routes();
+Auth::routes(['verify' => true]);
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
