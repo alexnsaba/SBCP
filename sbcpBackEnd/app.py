@@ -6,6 +6,12 @@ from keras.preprocessing import image
 import numpy as np
 import tensorflow as tf
 
+
+
+
+
+
+
 app = Flask(__name__)
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -17,14 +23,17 @@ STATIC_FOLDER = 'static'
 graph = tf.get_default_graph()
 with graph.as_default():
     # load model at very first
-   model = load_model(STATIC_FOLDER + '/' + 'scbp.h5')
+   model = load_model(STATIC_FOLDER + '/' + 'dd.h5')
+   #sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+   model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
 
 
-# call model to predict an image
+# call model to predict an image8
 def api(full_path):
     data = image.load_img(full_path, target_size=(1152, 896, 3))
     data = np.expand_dims(data, axis=0)
-    data = data * 1.0 / 255
+	
+    # data = data * 1.0 / 255
 
     with graph.as_default():
         predicted = model.predict(data)
