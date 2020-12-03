@@ -26,7 +26,9 @@ Route::get('/Predictions', function () {
     return view('predictions');
 })->middleware('auth');
 
+
 Route::post('/predict',[PredictController::class, 'getPrediction'])->name('imagePredict')->middleware('auth');
+
 
 Route::get('Visualisations/', function () {
     return view('visualisation');
