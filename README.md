@@ -5,31 +5,35 @@
 
 </p>
 
-## About Smart Breast Cancer Prediction
+## Smart Breast Cancer Predictor System
+### Abstract
+Breast cancer in Uganda is the third commonest cancer in women, coming only next to cancer of the cervix and Kaposi's sarcoma. In this Project (SBCP), the Smart Breast Cancer Predictor Project members investigated how breast cancer is diagnosed in Uganda. The SBCP team members found out that the mammogram image is commonly used in diagnosis of breast cancer, the doctor spends more time (average of 18 minutes) to diagnose a single patient, and the number of breast cancer specialists is relatively small. Basing on the results of the study, we proposed to address the issues that we found out, by developing Smart Breast Cancer Predictor System to effectively predict breast cancer basing on mammogram images.
+SBCP takes a mammogram image as its input, analyses it to find out whether there is presence of Breast Cancer. It provides graphical analysis of the rate of spread of breast cancer, keep track of patients’ breast cancer prediction results, and notifies patients whose results are predicted to be positive about the next checkup.
+ The SBCP will mainly operate in health centers that handle issues related to breast cancer.
+The requirements of the SBCP system are:
+- R001 Smart Breast Cancer Predictor system shall allow Doctors to predict the presence of breast cancer.
+- R002 Smart Breast Cancer Predictor system shall provide graphical analysis of the rate of spread of breast
+  cancer.
+- R003 Smart Breast Cancer Predictor system shall notify Patients diagnosed with breast cancer about the next
+  checkup.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## How to use the SBCP Application
+<p align="center">
+<img src='sbcpBackEnd/Screenshot.png'>
+</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-git 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+[Click Here to see the Online User Manual](https://laracasts.com). This will guide you on how to use the SBCP System 
 
 ## SBCP Developers
 
-We would like to thank you for visiting our SBCP application  [blog page](https://patreon.com/taylorotwell).
+We would like to thank you for visiting our SBCP application  [SBCP Team](https://finalyearprojectforsaab.wordpress.com/roles).
 
 - **[Arnold Kalema](https://arnoldkk.000webhostapp.com/)**
+<p align="left">
+<img src='sbcpBackEnd/Screenshot.png'>
+</p>
 - **[Tighten Co.](https://tighten.co)**
 - **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
 - **[64 Robots](https://64robots.com)**

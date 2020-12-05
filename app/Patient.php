@@ -19,5 +19,9 @@ class Patient extends Model
     {
         return $this->hasOne('App\Location');
     }
+    public function reminder()
+    {
+        return $this->hasMany('App\Reminder');
+    }
 
 }

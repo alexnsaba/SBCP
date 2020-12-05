@@ -27,6 +27,8 @@ class RecordsView extends Controller
         $result=$request['results'];
         $image = $request->session()->get('image');
         $clinical_notes=$request['clinical_notes'];
+        $reminder = $request['reminder'];
+        $checkUpDate = $request['checkupDate'];
         //$image = $request->file('mammogram');
         //$imageName = 'SBCP'.time().'.'.$image->extension();
         //$image->move(public_path('images'),$imageName);
@@ -50,6 +52,15 @@ class RecordsView extends Controller
                 'Doctor_id' =>$doctor_id,  'region'=>$region[0]->region,
                 "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
                 "updated_at" => \Carbon\Carbon::now()]
+        );
+        DB::table('reminders')->insert(
+            [
+                'data'=>$reminder,
+                'reminder_date'=>$checkUpDate,
+                'email'=>$patient[0]->Email,
+                'status'=>'pending'
+
+            ]
         );
 
         $request->session()->forget('class');

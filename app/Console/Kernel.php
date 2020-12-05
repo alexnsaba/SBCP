@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Patient;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -28,12 +29,12 @@ class Kernel extends ConsoleKernel
      */
 
 
-    private function sendEmailToUser($userId, $reminders)
-    {
-        $user = User::find($userId);
-
-        Mail::to($user)->send(new ReminderEmailDigest($reminders));
-    }
+//    private function sendEmailToUser($userId, $reminders)
+//    {
+//        $user = User::find($userId);
+//
+//        Mail::to($user)->send(new ReminderEmailDigest($reminders));
+//    }
 
 
     protected function schedule(Schedule $schedule)
@@ -41,26 +42,45 @@ class Kernel extends ConsoleKernel
     $schedule->call(function () {
 
         // Get all reminders for today
-        $reminders = DB::table('patients')->query();
+//        $reminders = DB::table('patients')->query();
         $reminders = Reminder::query()
-            ->with(['lead'])
+//            ->with(['lead'])
             ->where('reminder_date', now()->format('Y-m-d'))
             ->where('status', 'pending')
-            ->orderByDesc('user_id')
+//            ->orderByDesc('user_id')
             ->get();
 
         // group all reminders by user
-        $data = [];
+//        $data = [];
         foreach ($reminders as $reminder) {
-            $data[$reminder->user_id][] = $reminder->toArray();
+//            $data[$reminder->user_id][] = $reminder->toArray();
+            $reminder->status ="sent";
+            $reminder->save();
+            $this->sendEmailToUser($reminder);
+
         }
 
-        foreach ($data as $userId => $reminders) {
-            $this->sendEmailToUser($userId, $reminders);
-        }
+//        foreach ($data as $userId => $reminders) {
+//            $this->sendEmailToUser($userId, $reminders);
+//        }
+
+
+
 
     })->daily();
 
+    }
+//    private function sendEmailToUser($userId, $reminders)
+//    {
+//        $user = User::find($userId);
+//
+//        Mail::to($user)->send(new ReminderEmailDigest($reminders));
+//    }
+    private function sendEmailToUser($reminder)
+    {
+//        $user = User::find($userId);
+        $patient = Patient::query()->where('Email',$reminder->email)->get();
+        Mail::to($patient)->send(new ReminderEmailDigest($reminder));
     }
 
 //    protected function schedule(Schedule $schedule)
