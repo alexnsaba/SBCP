@@ -30,13 +30,29 @@ The requirements of the SBCP system are:
 
 We would like to thank you for visiting our SBCP application  [SBCP Team](https://finalyearprojectforsaab.wordpress.com/roles).
 
-- **[Arnold Kalema](https://arnoldkk.000webhostapp.com/)**
-<p align="left">
-<img src='sbcpBackEnd/Screenshot.png'>
+- [Arnold Kalema](https://arnoldkk.000webhostapp.com/)<br>
+[GIT REPO](https://github.com/kalemakk)
+<p align="center">
+<img src='sbcpBackEnd/20201120_072221.jpg'>
 </p>
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
+
+- [MUTUNGI DENNIS SHARP](https://arnoldkk.000webhostapp.com/)<br>
+[GIT REPO](https://github.com/kalemakk)
+<p align="center">
+<img src='sbcpBackEnd/20201120_072221.jpg'>
+</p>
+
+- [NIYONSABA ALEX](https://arnoldkk.000webhostapp.com/)<br>
+[GIT REPO](https://github.com/kalemakk)
+<p align="center">
+<img src='sbcpBackEnd/20201120_072221.jpg'>
+</p>
+
+- [OKOTH BRAIN](https://arnoldkk.000webhostapp.com/)<br>
+[GIT REPO](https://github.com/kalemakk)
+<p align="center">
+<img src='sbcpBackEnd/20201120_072221.jpg'>
+</p>
 
 
 ## Contributing
