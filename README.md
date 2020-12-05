@@ -33,8 +33,8 @@ Here are the Developers of the SBCP System
 
 - [Arnold Kalema](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
-<p align="center">
-<img src='sbcpBackEnd/20201120_072221.jpg' width="100" height="100">
+<p align="left">
+<img src='sbcpBackEnd/20201120_072221.jpg' width="500" height="500">
 </p>
 
 - [MUTUNGI DENNIS SHARP](https://arnoldkk.000webhostapp.com/)<br>
