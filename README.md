@@ -11,10 +11,10 @@ Breast cancer in Uganda is the third commonest cancer in women, coming only next
 SBCP takes a mammogram image as its input, analyses it to find out whether there is presence of Breast Cancer. It provides graphical analysis of the rate of spread of breast cancer, keep track of patients’ breast cancer prediction results, and notifies patients whose results are predicted to be positive about the next checkup.
  The SBCP will mainly operate in health centers that handle issues related to breast cancer.
 The requirements of the SBCP system are:
-- R001 Smart Breast Cancer Predictor system shall allow Doctors to predict the presence of breast cancer.
-- R002 Smart Breast Cancer Predictor system shall provide graphical analysis of the rate of spread of breast
+- **R001** Smart Breast Cancer Predictor system shall allow Doctors to predict the presence of breast cancer.
+- **R002** Smart Breast Cancer Predictor system shall provide graphical analysis of the rate of spread of breast
   cancer.
-- R003 Smart Breast Cancer Predictor system shall notify Patients diagnosed with breast cancer about the next
+- **R003** Smart Breast Cancer Predictor system shall notify Patients diagnosed with breast cancer about the next
   checkup.
 
 
