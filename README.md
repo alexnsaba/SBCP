@@ -28,30 +28,28 @@ The requirements of the SBCP system are:
 
 ## SBCP Developers
 
-We would like to thank you for visiting our SBCP application  [SBCP Team](https://finalyearprojectforsaab.wordpress.com/roles).
+We would like to thank you for visiting our SBCP application  [SBCP Team](https://finalyearprojectforsaab.wordpress.com/roles).<br>
+Here are the Developers of the SBCP System
 
 - [Arnold Kalema](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
 <p align="center">
-<img src='sbcpBackEnd/20201120_072221.jpg'>
+<img src='sbcpBackEnd/20201120_072221.jpg' width="100" height="100">
 </p>
 
 - [MUTUNGI DENNIS SHARP](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
 <p align="center">
-<img src='sbcpBackEnd/20201120_072221.jpg'>
 </p>
 
 - [NIYONSABA ALEX](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
 <p align="center">
-<img src='sbcpBackEnd/20201120_072221.jpg'>
 </p>
 
 - [OKOTH BRAIN](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
 <p align="center">
-<img src='sbcpBackEnd/20201120_072221.jpg'>
 </p>
 
 
