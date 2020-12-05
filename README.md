@@ -19,14 +19,14 @@ The requirements of the SBCP system are:
 
 
 
-## How to use the SBCP Application
+### How to use the SBCP Application
 <p align="center">
 <img src='sbcpBackEnd/Screenshot.png'>
 </p>
 
 [Click Here to see the Online User Manual](https://laracasts.com). This will guide you on how to use the SBCP System 
 
-## SBCP Developers
+### SBCP Developers
 
 We would like to thank you for visiting our SBCP application  [SBCP Team](https://finalyearprojectforsaab.wordpress.com/roles).<br>
 Here are the Developers of the SBCP System
@@ -39,32 +39,31 @@ Here are the Developers of the SBCP System
 
 - [MUTUNGI DENNIS SHARP](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
-<p align="center">
+<p align="left">
 </p>
 
 - [NIYONSABA ALEX](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
-<p align="center">
+<p align="left">
 </p>
 
 - [OKOTH BRAIN](https://arnoldkk.000webhostapp.com/)<br>
 [GIT REPO](https://github.com/kalemakk)
-<p align="center">
+<p align="left">
 </p>
 
+### Benefits of the SBCP (Smart Breast Cancer Predictor) System 
 
-## Contributing
+- Doctors will be able to predict the presence of breast cancer in a short time.
+- The system will notify patients diagnosed with breast cancer about the next checkup.
+- The system will provide graphical analysis of the rate of spread of breast cancer.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Security Vulnerabilities
 
-## Code of Conduct
+If you discover a security vulnerability within SBCP (Smart Breast Cancer Predictor) , please send an e-mail to SBCP Team via 
+[kalemarnld@gmail.com](mailto:kalemarnld@gmail.com), [okothbrain@gmail.com](mailto:okothbrain@gmail.com)<br>
+All security vulnerabilities will be promptly addressed.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### License
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Smart Breast Cancer Predictor is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
