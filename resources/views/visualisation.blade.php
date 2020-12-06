@@ -11,14 +11,13 @@
         <h4>Visualise by Date</h4>
         <form class="form-inline" method="post" action="/chart">
             @csrf
-            <div class="form-group mx-sm-3 mb-2">
+            <div class="form-group mx-sm-3 mb-2" style="font-size:20px">
                 <div class="demo">
                     <label for="date1">Choose Time Range&nbsp;</label>&nbsp;
-                    <input type="text" class="form-control-date form-control-primary" name="timerange" id="date-range0" value="" size="40" required>
+                    <input type="text" class="form-control-date form-control-primary" name="timerange" id="date-range0" value="" size="35" required>
                     <pre class="options">
                     {}</pre>
                 </div>
-
             </div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <button type="submit" class="btn btn-primary mb-2 btn-out-dashed">View Graphs</button>&nbsp;
             <button type="reset" class="btn btn-danger mb-2 btn-out-dashed">Reset</button>
