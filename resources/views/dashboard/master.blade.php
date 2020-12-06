@@ -18,7 +18,7 @@
     <meta name="author" content="colorlib" />
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
-    <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../files/assets/images/logo.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
