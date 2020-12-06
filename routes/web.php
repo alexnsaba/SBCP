@@ -73,3 +73,5 @@ Route::get('delete/{id}','PatientController@deletepatient');
 
 
 
+
+
