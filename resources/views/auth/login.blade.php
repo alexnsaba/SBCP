@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
 
@@ -8,11 +8,13 @@
             <div class="row">
                 <div class="col-sm-12">
 
+
                     <form method="POST" class="md-float-material form-material" action="{{ route('login') }}">
                         @csrf
                         <div class="text-center">
                             <span style="font-size: 25px"><img src="../files/assets/images/logo.ico" height="100" width="100" class="img-radius" alt="logo.png">
                             Smart Breast Cancer Predictor</span>
+
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">
@@ -22,6 +24,7 @@
                                     </div>
                                 </div>
                                 <div class="row m-b-20">
+
                                     {{-- <div class="col-md-6">
                                         --}}
                                         {{-- <button
@@ -60,33 +63,39 @@
                                     <span class="form-bar"></span>
                                     <label for="password" class="float-label">{{ __('Password') }}</label>
                                 </div>
+
                                 <div class="row m-t-25 text-left">
                                     <div class="col-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
+
                                                 <input type="checkbox" name="remember" id="remember"
                                                     {{ old('remember') ? 'checked' : '' }}>
                                                 <span class="cr"><i
                                                         class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+
                                                 <span class="text-inverse">Remember me</span>
                                             </label>
                                         </div>
                                         <div class="forgot-phone text-right float-right">
                                             @if (Route::has('password.request'))
+
                                                 <a href="{{ route('password.request') }}" class="text-right f-w-600"> Forgot
                                                     Password?</a>
-                                            @endif
+                          @endif
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
+
                                         <button type="submit"
                                             class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
                                     </div>
                                 </div>
                                 <p class="text-inverse text-left">Don't have an account?<a href="{{ route('register') }}"
                                         style="color: #0a6aa1"> <b>Register here </b></a></p>
+
                             </div>
                         </div>
                     </form>

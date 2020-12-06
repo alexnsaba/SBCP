@@ -38,10 +38,7 @@ class PatientController extends Controller
 
     }
 
-//    public function open(){
-//        $locations = Location::all();
-//        return view('managepatients')->with(compact('locations'));
-//    }
+
 
     public function displayPatients(){
 

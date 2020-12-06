@@ -57,7 +57,7 @@ Predictions
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Remainder Note</label>
         <div class="col-sm-10">
-            <textarea rows="5" cols="5" name="clinical_notes" class="form-control form-control-primary" required></textarea>
+            <textarea rows="5" cols="5" name="reminder" class="form-control form-control-primary" required></textarea>
         </div>
     </div>
 
