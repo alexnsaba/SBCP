@@ -71,7 +71,6 @@ Route::post('addpatient','PatientController@savePatientDetails');
 Route::get('managepatients','PatientController@displayPatients');
 Route::get('delete','PatientController@deletepatient');
 Route::get('delete/{id}','PatientController@deletepatient');
-
-
-
-
+Route::get('userProfile',function(){
+    return view('profile');
+})->middleware('auth');

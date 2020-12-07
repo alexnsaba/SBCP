@@ -6,7 +6,6 @@ Visualisations
 <h3 class="card-header">Breast Cancer Graphical Visualization</h3>
 @endSection
 @section('content')
-
   <div class="card-body">
   <form class="form-inline" method ="post" action="/chart">
   @csrf

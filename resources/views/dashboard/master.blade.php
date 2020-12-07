@@ -103,32 +103,6 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
 
-                            <li class="header-search">
-                                <form action="/search" method="post">
-                                    @csrf
-                                    <div class="main-search morphsearch-search">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend search-close">
-                                                <i class="feather icon-x input-group-text"></i>
-                                            </span>
-
-                                            <input type="text" class="form-control" placeholder="Enter search key"
-                                                name="search">
-
-                                            <div class="input-group-append search-btn">
-
-                                                <i class="feather icon-search input-group-text"></i>
-                                                <!--
-                                                <button type="submit" class="btn btn-primary input-group-text">Submit</button>
-                                                -->
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </li>
-
                             <li>
                                 <a href="#!"
                                     onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()"
@@ -162,7 +136,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="/userProfile">
                                                 <i class="feather icon-user"></i> Profile
                                             </a>
                                         </li>
