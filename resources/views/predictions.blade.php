@@ -7,19 +7,23 @@ Predictions
 @endSection
 @section('content')
   <div class="card-body">
-      <form action="{{ route('imagePredict') }}" method="POST" enctype="multipart/form-data">
+      <form action="/predict" method="POST" enctype="multipart/form-data">
           @csrf
   <div class="form-group">
     <label for="Image">Upload Mammogram Image</label>
+
       <input type="file" class="form-control form-control-primary" name="image" id="image" accept="image/.pgm" required>
 
 {{--      <input type="file" name="image" class="form-control form-control-primary" id="image" accept="image/*" onchange="previewFile(this);" required>--}}
+
     <small id="imageHelp" class="form-text text-muted">** Strictly, Only mammogram images should be uploaded</small>
   </div>
+
   <center>
 {{--  <img id="previewImg" src="/examples/images/transparent.png">--}}
   </center><br/>
  <center>
+<<<<<<< HEAD
 {{--  <button type="submit" id="btnFetch" class="btn btn-primary btn-out-dashed">Predict</button>--}}
      <button id="btnFetch" type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
 
@@ -27,6 +31,13 @@ Predictions
      <!--
      <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
      -->
+=======
+
+  <button type="submit" class="btn btn-primary btn-out-dashed">Predict</button>
+  <!--
+  <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
+  -->
+>>>>>>> c5be0af1911500020f2b60a5843bb21723c1887e
 </center>
 </form>
 {{--      <div style="margin:3em;">--}}

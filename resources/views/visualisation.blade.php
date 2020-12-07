@@ -23,6 +23,9 @@
             </div>
             <button type="submit" class="btn btn-primary mb-2 btn-out-dashed">View Graphs</button>&nbsp;
             <button type="reset" class="btn btn-danger mb-2 btn-out-dashed">Reset</button>
+            <!--
+            <input type="text" name="daterange" value="01/01/2018 - 05/15/2018" />
+            -->
         </form>
     </div>
     <!--Visualise by year -->
@@ -53,4 +56,13 @@
             <button type="submit" class="btn btn-primary mb-2 btn-out-dashed">View Graphs</button>
         </form>
     </div>
+    <script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
 @endsection
