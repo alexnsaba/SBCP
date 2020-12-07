@@ -20,11 +20,20 @@ Predictions
 {{--  <img id="previewImg" src="/examples/images/transparent.png">--}}
   </center><br/>
  <center>
-  <button type="submit" class="btn btn-primary btn-out-dashed">Predict</button>
-  <!--
-  <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
-  -->
+{{--  <button type="submit" id="btnFetch" class="btn btn-primary btn-out-dashed">Predict</button>--}}
+     <button id="btnFetch" type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
+
+
+     <!--
+     <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
+     -->
 </center>
 </form>
-</div>
+{{--      <div style="margin:3em;">--}}
+{{--          <form class="form-inline" id="topicForm" action="" method="POST">--}}
+{{--              <input type="text" id="inputTopic" name="topic" class="form-control mb-2 mr-sm-2" placeholder="Topic of interest" required autofocus/>--}}
+{{--              <button type="button" id="btnFetch" class="btn btn-primary mb-2">Submit</button>--}}
+{{--          </form>--}}
+{{--      </div>--}}
+  </div>
 @endsection

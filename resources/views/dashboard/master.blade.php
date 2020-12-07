@@ -7,6 +7,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+{{--    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">--}}
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -259,7 +260,71 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
 
+                            // $('input[type=file][name="image[]"]').change(function(){
+                            //     var hasNoFiles = this.files.length == 0;
+                            //     $(this).closest('form') /* Select the form element */
+                            //         .find('input[type=submit]') /* Get the submit button */
+                            //         .prop('disabled', hasNoFiles); /* Disable the button. */
+                            //
+                            //     $("#btnFetch").click(function() {
+                            //
+                            //     $(this).html(
+                            //         `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+                            //     );
+                            //     });
+                            //
+                            // });
+
+
+
+                            // $("#btnFetch").click(function() {
+                                // disable button
+                                // $(this).prop("disabled", true);
+                                // add spinner to button
+                                // $( ".image" ).change(function() {
+
+
+                                    // $("#btnFetch").click(function() {
+                                    //     $('input[type=file][name="image[]"]').change(function(){
+                                    //         var hasNoFiles = this.files.length == 0;
+                                    //         $(this).prop('disabled', hasNoFiles); /* Disable the button. */
+                                    //         $(this).html(
+                                    //             `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+                                    //         );
+                                    //     });
+                                    // });
+
+
+
+
+                                // });
+
+                                // $("#btnFetch").click(function() {
+                                //     // disable button
+                                //     // $(this).prop("disabled", true);
+                                //     // add spinner to button
+                                //     $(this).html(
+                                //         `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+                                //     );
+                                // });
+                                // $(this).html(
+                                //     `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+                                // );
+                            // });
+                        });
+                    </script>
+
+
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -314,6 +379,5 @@
                         data-cf-settings="26dfe7f3f4fe4ac076b34b38-|49" defer=""></script>
 </body>
 
-<!-- Mirrored from colorlib.com/polygon/admindek/default/animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:02:24 GMT -->
 
 </html>

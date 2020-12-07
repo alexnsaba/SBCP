@@ -40,7 +40,8 @@ class RecordsView extends Controller
         $patient = Patient::query()->where('id',$patient_id)->get();
 
 //        $patient_district = Patient::query()->where('id',$patient_id)->get();
-        $region = DB::table('locations')->where('name',$patient[0]->Location)->get();
+        $location = $patient->location;
+//        $region = DB::table('locations')->where('name',$patient[0]->Location)->get();
 
 
 
@@ -49,15 +50,20 @@ class RecordsView extends Controller
         DB::table('predictions')->insert(
             ['Results' =>$result, 'Clinical_notes' =>$clinical_notes,
                 'image'=>$image, 'Patient_id' =>$patient_id,
-                'Doctor_id' =>$doctor_id,  'region'=>$region[0]->region,
+                'Doctor_id' =>$doctor_id,  'region'=>$location->region,
+//                'Doctor_id' =>$doctor_id,  'region'=>$region[0]->region,
                 "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
                 "updated_at" => \Carbon\Carbon::now()]
         );
         DB::table('reminders')->insert(
             [
                 'data'=>$reminder,
+                'patient_id'=>$patient_id,
+
                 'reminder_date'=>$checkUpDate,
-                'email'=>$patient[0]->Email,
+                'email'=>$patient->Email,
+//                'email'=>$patient[0]->Email,
+
                 'status'=>'pending'
 
             ]

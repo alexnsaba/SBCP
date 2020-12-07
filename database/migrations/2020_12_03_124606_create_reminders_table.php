@@ -15,6 +15,7 @@ class CreateRemindersTable extends Migration
     {
         Schema::create('reminders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('patient_id');
             $table->string('data');
             $table->date('reminder_date');
             $table->string('status')->default('sent');

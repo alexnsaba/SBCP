@@ -24,8 +24,8 @@ Visualisations
 
     <select class="form-control form-control-primary" id="location" name="location" required>
         <option value="" selected disabled>Enter patient's location</option>
-        @foreach ($locations as $location)
-            <option value="{{$location->name}}">{{$location->name}}</option>
+        @foreach ($locations as $locate)
+            <option value="{{$locate->id}}">{{$locate->name}}</option>
         @endforeach
     </select>
 
@@ -71,7 +71,7 @@ Visualisations
 <tr>
 <td>{{ $patient->id }}</td>
 <td>{{ $patient->Name }}</td>
-<td>{{ $patient->Location }}</td>
+<td>{{ $patient->location->name}}</td>
 <td>{{ $patient->Phone_number }}</td>
 <td>{{ $patient->Email }}</td>
     <td><a class="btn btn-primary" href="{{ url('delete/'.$patient->id)}}">Delete</a></td>
