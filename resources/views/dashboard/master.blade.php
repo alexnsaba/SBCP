@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>SBCP | @yield('title')</title>
 
@@ -74,6 +75,47 @@
         }
 
     </script>
+
+    <!--Styles for the time range picker -->
+    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="dist/daterangepicker.min.css" />
+    <style type="text/css">
+        #wrapper {
+            width: 800px;
+            margin: 0 auto;
+            color: #333;
+            font-family: Tahoma, Verdana, sans-serif;
+            line-height: 1.5;
+            font-size: 20px !important;
+        }
+
+        .demo {
+            margin: 30px 0;
+        }
+
+        .date-picker-wrapper .month-wrapper table .day.lalala {
+            background-color: orange;
+        }
+
+        .options {
+            display: none;
+            border-left: 6px solid #8ae;
+            padding: 10px;
+            font-size: 20px;
+            line-height: 1.4;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+
+        .date-picker-wrapper.date-range-picker19 .day.first-date-selected {
+            background-color: red !important;
+        }
+
+        .date-picker-wrapper.date-range-picker19 .day.last-date-selected {
+            background-color: orange !important;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -146,21 +188,24 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
+                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                <i class="feather icon-log-out" ></i> Logout
+                                                <i class="feather icon-log-out"></i> Logout
 
-{{--                                                {{ __('Logout') }}--}}
+                                                {{--
+                                                {{ __('Logout') }}--}}
                                             </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
                                                 @csrf
                                             </form>
 
-{{--                                            <a href="{{ route('logout') }}">--}}
-{{--                                                <i class="feather icon-log-out" ></i> Logout--}}
-{{--                                            </a>--}}
+                                            {{-- <a
+                                                href="{{ route('logout') }}">--}}
+                                                {{-- <i class="feather icon-log-out"></i>
+                                                Logout--}}
+                                                {{-- </a>--}}
                                         </li>
 
                                     </ul>
@@ -182,7 +227,8 @@
                                     <li class="pcoded-hasmenu active">
                                         <a href="Predictions" class="waves-effect waves-dark">
                                             <!-- <i class="feather icon-home"> -->
-                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-stethoscope"></i></span>
+                                            <span class="pcoded-micon" style="font-size:20pt"><i
+                                                    class="fa fa-stethoscope"></i></span>
                                             <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Predictions</span>
                                         </a>
                                     </li>
@@ -195,8 +241,10 @@
                                     </li>
                                     <li class="pcoded-hasmenu active pcoded-trigger">
                                         <a href="managepatients" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-users" aria-hidden="true"></i></span>
-                                            <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Manage Patients</span>
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-users"
+                                                    aria-hidden="true"></i></span>
+                                            <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Manage
+                                                Patients</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -285,7 +333,25 @@
 
                     </script>
                     <script src="../ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
-                        data-cf-settings="26dfe7f3f4fe4ac076b34b38-|49" defer=""></script>
+                        data-cf-settings="26dfe7f3f4fe4ac076b34b38-|49" defer="">
+                    </script>
+                    <!--Scripts for the time range picker -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+                        type="text/javascript"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"
+                        type="text/javascript"></script>
+                    <script src="src/jquery.daterangepicker.js"></script>
+                    <script src="demo.js"></script>
+
+                    <script>
+                        $(function() {
+                            $('a.show-option').click(function(evt) {
+                                evt.preventDefault();
+                                $(this).siblings('.options').slideToggle();
+                            });
+                        })
+
+                    </script>
 </body>
 
 <!-- Mirrored from colorlib.com/polygon/admindek/default/animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Dec 2019 13:02:24 GMT -->

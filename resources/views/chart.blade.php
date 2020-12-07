@@ -33,7 +33,6 @@ Visualisations
     <h5> No Patient was diagnosed in the above time range</h5>
     @endif
     </div>
-
     <div class="col-sm">
     <h4>Pie chart of Patients Diagnosed of Breast Cancer  From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
     <hr style="background:black;">
@@ -66,7 +65,6 @@ Visualisations
           ["Negative(0)",{{ $negatives}}],
           ["Positive(1)",{{$positives}}]
         ]);
-
         var options = {
           width: 300,
           legend: { position: 'none' },
@@ -79,9 +77,7 @@ Visualisations
             }
           },
           bar: { groupWidth: "90%"},
-
         };
-
         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
         // Convert the Classic options to Material options.
         chart.draw(data, google.charts.Bar.convertOptions(options));
@@ -99,11 +95,9 @@ Visualisations
           ["Negative(0)",{{ $negatives}}],
           ["Positive(1)",{{$positives}}]
         ]);
-
         var options = {
           is3D: true,
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
         chart.draw(data, options);
       }
@@ -113,7 +107,6 @@ Visualisations
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Region', 'Negative', 'Positive'],
@@ -122,7 +115,6 @@ Visualisations
           ['Eastern Region', {{$east_negatives}}, {{$east_positives}}],
           ['Northern Region', {{$north_negatives}}, {{$north_positives}}]
         ]);
-
         var options = {
           axes: {
             y: {
@@ -131,9 +123,7 @@ Visualisations
           },
           bars: 'vertical' // Required for Material Bar Charts.
         };
-
         var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>

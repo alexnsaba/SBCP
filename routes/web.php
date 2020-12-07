@@ -64,9 +64,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('managepatients',function(){
 //    return view('managepatients');
 //});
-
-
-
 Route::post('addpatient','PatientController@savePatientDetails');
 Route::get('managepatients','PatientController@displayPatients');
 Route::get('delete','PatientController@deletepatient');
