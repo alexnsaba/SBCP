@@ -71,3 +71,5 @@ Route::get('delete/{id}','PatientController@deletepatient');
 Route::get('userProfile',function(){
     return view('profile');
 })->middleware('auth');
+Route::post('update','UserController@update')->middleware('auth');
+
