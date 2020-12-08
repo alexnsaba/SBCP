@@ -165,7 +165,7 @@
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="../files/assets/images/alex.png" class="img-radius"
+                                        <img src="profileImages/{{ Auth::user()->photo}}" class="img-radius"
                                             alt="User-Profile-Image">
                                         <span> {{ Auth::user()->name }}</span>
                                         <i class="feather icon-chevron-down"></i>
