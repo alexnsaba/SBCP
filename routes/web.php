@@ -66,14 +66,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('managepatients',function(){
 //    return view('managepatients');
 //});
-
-
-
 Route::post('addpatient','PatientController@savePatientDetails');
 Route::get('managepatients','PatientController@displayPatients');
 Route::get('delete','PatientController@deletepatient');
 Route::get('delete/{id}','PatientController@deletepatient');
-
-
-
+Route::get('userProfile',function(){
+    return view('profile');
+})->middleware('auth');
+Route::post('update','UserController@update')->middleware('auth');
 

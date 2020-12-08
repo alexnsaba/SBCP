@@ -10,8 +10,11 @@ class ChartController extends Controller
     public function drawCharts(Request $request)
     {
         try {
-        $date1 = $request['date1'];
-        $date2 = $request['date2'];
+        $range =$request['timerange'];
+        //spilting the time range string
+        $dates = explode(" ", $range);
+        $date1 = $dates[0];
+        $date2 = $dates[2];
         //over all predictions
         $negatives  =  DB::table('predictions')->where('results', 0)->whereBetween('created_at', [$date1, $date2])->count();
         $positives  =  DB::table('predictions')->where('results', 1)->whereBetween('created_at', [$date1, $date2])->count();

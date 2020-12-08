@@ -79,6 +79,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'name' => $data['name'],
             'email' => $data['email'],
+            'photo' => 'avatar.jpg',
             'password' => Hash::make($data['password']),
         ]);
 //        $when = now()->addMinutes(10);
