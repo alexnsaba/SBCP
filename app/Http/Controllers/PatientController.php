@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Location;
 use App\Patient;
+use App\User;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class PatientController extends Controller
 {
     //
     public function index(){
-        $patients = Patient::all();
+        $allPatients = Patient::all();
+        $patients = User::query()->where(id,Auth()->id())->patient;
 
-
-        return view('PatientDetails')->with(compact('patients'));
-//        return dd($patients);
+//        return view('PatientDetails')->with(compact('patients'));
+        return dd($patients->location);
     }
 
     public function savePatientDetails(Request $request)
@@ -30,7 +32,7 @@ class PatientController extends Controller
         $email=$request['email'];
 
         DB::table('patients')->insert(
-            ['Name' =>$name, 'Location' =>$location, 'Phone_number' =>$phone_number, 'Email' =>$email,
+            ['Name' =>$name, 'location_id' =>$location, 'Phone_number' =>$phone_number, 'Email' =>$email,'user_id'=>Auth()->id(),
                 "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
                 "updated_at" => \Carbon\Carbon::now()]
         );
@@ -42,9 +44,22 @@ class PatientController extends Controller
 
     public function displayPatients(){
 
-        $patients = DB::select('select * from patients');
+//        $patients = DB::select('select * from patients');
+        $patients = Patient::all()->where('user_id',Auth()->id());
+//            $patients = Patient::all()->where('id',Auth()->id());
         $locations = Location::all();
+//            $user = User::query()->where('id',Auth()->id());
+//            $patients = $user->patient;
+//        $patients=$patient->user->where('id', Auth()->id())->get();
+//        $patients=$patient->user->get();
+
+
         return view('managepatients')->with(compact('patients','locations'));
+//        return dd(Location::find(1)->patient);
+
+//        return dd(Patient::find(1)->location->name);
+//        return dd($patients);
+
 
     }
 

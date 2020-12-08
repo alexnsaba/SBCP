@@ -13,11 +13,11 @@ class Patient extends Model
     }
     public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
-    public function Location()
+    public function location()
     {
-        return $this->hasOne('App\Location');
+        return $this->belongsTo('App\Location');
     }
     public function reminder()
     {
