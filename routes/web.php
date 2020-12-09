@@ -72,4 +72,6 @@ Route::get('userProfile',function(){
     return view('profile');
 })->middleware('auth');
 Route::post('update','UserController@update')->middleware('auth');
+Route::post('updatePicture','UserController@updatePicture')->middleware('auth');
+
 
