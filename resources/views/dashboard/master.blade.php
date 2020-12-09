@@ -115,7 +115,58 @@
         .date-picker-wrapper.date-range-picker19 .day.last-date-selected {
             background-color: orange !important;
         }
+    </style>
 
+    <!--styles for the profile picture -->
+    <style>
+        .profile{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            background: url('profileImages/{{ Auth::user()->photo }}');
+            background-size: 100% 100%;
+            margin: 0px auto;
+            overflow: hidden;
+        }
+        .my_file{
+            position: absolute;
+            bottom: 0%;
+            outline: none;
+            color: transparent;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 120px 120px;
+            cursor: pointer;
+            transition: 0.4s;
+            background: rgba(0,0,0,0.5);
+            opacity:0;
+        }
+        .my_file::-webkit-file-upload-button{
+            visibility: hidden;
+        }
+        .my_file::before{
+            content: '\f030';
+            font-family: fontAwesome;
+            font-size: 50px;
+            color: #fff;
+            display: inline-block;
+            -webkit-user-select: none;
+        }
+        .my_file::after{
+            content: 'Update';
+            font-family: arial;
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            top: 200px;
+            font-size: 14px;
+            position: absolute;
+        }
+        .my_file:hover{
+            opacity:1;
+        }
     </style>
 </head>
 
