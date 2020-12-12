@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,38 +20,30 @@
     <meta name="author" content="colorlib" />
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
-    <link rel="icon" href="../files/assets/images/logo.ico" type="image/x-icon">
+    <link rel="icon" href="{{url('files/assets/images/logo.ico')}}" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
-
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/themify-icons/themify-icons.css">
-
-    <link rel="stylesheet" type="text/css" href="../files/bower_components/animate.css/css/animate.css">
-
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/icofont/css/icofont.css">
-
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/font-awesome/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../files/assets/css/pages.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/bower_components/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/bower_components/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('files/assets/pages/waves/css/waves.min.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/feather/css/feather.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/themify-icons/themify-icons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/bower_components/animate.css/css/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/icofont/css/icofont.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/pages.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+              integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <style>
         .fabutton {
             background: none;
             padding: 0px;
             border: none;
         }
-
     </style>
 
     <script src="https://kit.fontawesome.com/5ed7aa1b5d.js" crossorigin="anonymous"></script>
@@ -62,23 +55,19 @@
     <script>
         function previewFile(input) {
             var file = $("input[type=file]").get(0).files[0];
-
             if (file) {
                 var reader = new FileReader();
-
                 reader.onload = function() {
                     $("#previewImg").attr("src", reader.result);
                 }
-
                 reader.readAsDataURL(file);
             }
         }
-
     </script>
 
     <!--Styles for the time range picker -->
-    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="dist/daterangepicker.min.css" />
+{{--    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />--}}
+{{--    <link rel="stylesheet" href="{{asset('dist/daterangepicker.css')}}" />--}}
     <style type="text/css">
         #wrapper {
             width: 800px;
@@ -88,15 +77,12 @@
             line-height: 1.5;
             font-size: 20px !important;
         }
-
         .demo {
             margin: 30px 0;
         }
-
         .date-picker-wrapper .month-wrapper table .day.lalala {
             background-color: orange;
         }
-
         .options {
             display: none;
             border-left: 6px solid #8ae;
@@ -106,68 +92,65 @@
             background-color: #eee;
             border-radius: 4px;
         }
-
         .date-picker-wrapper.date-range-picker19 .day.first-date-selected {
             background-color: red !important;
         }
-
         .date-picker-wrapper.date-range-picker19 .day.last-date-selected {
             background-color: orange !important;
         }
+    </style>
 
-
-
-    /*    css for button loading*/
-        /* Make sure nothing inside buttons can send click events so we can catch button clicks with delegated events. */
-        button #btnFetch {
-            pointer-events: none;
+    <!--styles for the profile picture -->
+    <style>
+        .profile{
+            width: 150px;
+            height: 150px;
+            position: relative;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            background: url('profileImages/{{ Auth::user()->photo }}');
+            background-size: 100% 100%;
+            margin: 0px auto;
+            overflow: hidden;
         }
-
-        /* Just a really naive css example to swap the button contents with the spinner. Bring your own spinner & styles. */
-        .loading {
-            opacity: .5;
+        .my_file{
+            position: absolute;
+            bottom: 0%;
+            outline: none;
+            color: transparent;
+            width: 100%;
+            box-sizing: border-box;
+            padding-top: 50px;
+            /*padding: 120px 120px;*/
+            cursor: pointer;
+            transition: 0.4s;
+            background: rgba(0,0,0,0.5);
+            opacity:0;
         }
-        .loading span {
-            display: none;
+        .my_file::-webkit-file-upload-button{
+            visibility: hidden;
         }
-
-        /* Side note: I'm using opacity here to make the button look disabled. But you probably shouldn't set disable=true for the button on submit, even to prevent multiple clicks. There could be a server error, network problem or whatever. The user should be able to try to submit the form again any time without reloading the page. Also remember to have screen reader accessible text on your spinner. Take care of accessiblity! */
-
-    /*new spinner*/
-
-        /*.loading2 {*/
-        /*    display: flex;*/
-        /*    justify-content: center;*/
-        /*    margin: 2rem;*/
-        /*}*/
-        /*.loading2::after {*/
-        /*    content: "";*/
-        /*    width: 70px;*/
-        /*    height: 70px;*/
-        /*    border: 10px solid #dddddd;*/
-        /*    border-top-color: #60d460;*/
-        /*    !* border-bottom-color: #60d460;  -- optional *!*/
-        /*    border-radius: 50%;*/
-        /*    !* animation: spin 0.6s 0.1s linear infinite both; -- optional *!*/
-        /*    animation: spin 0.8s 0.1s ease-in-out infinite both;*/
-        /*}*/
-
-        /*@keyframes spin {*/
-        /*    from {*/
-        /*        transform: rotate(0);*/
-        /*    }*/
-        /*    to {*/
-        /*        transform: rotate(360deg);*/
-        /*    }*/
-        /*}*/
-
-        /*@keyframes bounce {*/
-        /*    to {*/
-        /*        opacity: 1;*/
-        /*        transform: scale(1.75);*/
-        /*    }*/
-        /*}*/
-
+        .my_file::before{
+            content: '\f030';
+            font-family: fontAwesome;
+            font-size: 50px;
+            color: #fff;
+            display: inline-block;
+            -webkit-user-select: none;
+        }
+        .my_file::after{
+            content: 'Update';
+            font-family: arial;
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            /*top: -30px;*/
+            font-size: 14px;
+            /*position: absolute;*/
+        }
+        .my_file:hover{
+            opacity:1;
+        }
     </style>
 </head>
 
@@ -217,12 +200,21 @@
 
                         <li class="user-profile header-notification">
                             <div class="dropdown-primary dropdown">
+
                                 <div class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="../files/assets/images/alex.png" class="img-radius"
+                                    <img src="profileImages/{{ Auth::user()->photo}}" class="img-radius"
                                          alt="User-Profile-Image">
                                     <span> {{ Auth::user()->name }}</span>
                                     <i class="feather icon-chevron-down"></i>
                                 </div>
+
+
+{{--                                <div class="dropdown-toggle" data-toggle="dropdown">--}}
+{{--                                    <img src="../files/assets/images/alex.png" class="img-radius"--}}
+{{--                                         alt="User-Profile-Image">--}}
+{{--                                    <span> {{ Auth::user()->name }}</span>--}}
+{{--                                    <i class="feather icon-chevron-down"></i>--}}
+{{--                                </div>--}}
                                 <ul class="show-notification profile-notification dropdown-menu"
                                     data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                     <li>
@@ -403,77 +395,6 @@
                             $(this).siblings('.options').slideToggle();
                         });
                     })
-
-                </script>
-{{--                script for loading button --}}
-                <script>
-                    /* Example on how to use this at the bottom here. Implementation first. */
-
-                    function LoadingSpinner (form, spinnerHTML) {
-                        form = form || document
-
-                        //Keep track of button & spinner, so there's only one automatic spinner per form
-                        var button
-                        var spinner = document.createElement('div')
-                        spinner.innerHTML = spinnerHTML
-                        spinner = spinner.firstChild
-
-                        //Delegate events to a root element, so you don't need to attach a spinner to each individual button.
-                        form.addEventListener('click', start)
-
-                        //Stop automatic spinner if validation prevents submitting the form
-                        //Invalid event doesn't bubble, so use capture
-                        form.addEventListener('invalid', stop, true)
-
-                        //Start spinning only when you click a submit button
-                        function start (event) {
-                            if (button) stop()
-                            button = event.target
-                            if (button.type === 'submit'&& button.id ==='btnFetch') {
-                                LoadingSpinner.start(button, spinner)
-                            }
-                        }
-
-                        function stop () {
-                            LoadingSpinner.stop(button, spinner)
-                        }
-
-                        function destroy () {
-                            stop()
-                            form.removeEventListener('click', start)
-                            form.removeEventListener('invalid', stop, true)
-                        }
-
-                        return {start: start, stop: stop, destroy: destroy}
-                    }
-
-                    //I guess these would be called class methods. They're useable without instantianing a new LoadingSpinner so you can start & stop spinners manually on any elements, for ajax and stuff.
-                    LoadingSpinner.start = function (element, spinner) {
-                        element.classList.add('loading')
-                        return element.appendChild(spinner)
-                    }
-
-                    LoadingSpinner.stop = function (element, spinner) {
-                        element.classList.remove('loading')
-                        return spinner.remove()
-                    }
-                    //Example on how to use LoadingSpinner
-
-                    //Bring your own spinner. You can use any html as the spinner. You can find lots of cool spinners for example here on Codepen. I'm using just plain text. Maybe technically not a spinner, but this is more about the script than graphics.
-                    var exampleForm = document.querySelector('#example')
-                    // var exampleForm = document.querySelector('.loading2')
-                    // var exampleLoader = new LoadingSpinner(exampleForm)
-
-                    var exampleLoader = new LoadingSpinner(exampleForm, 'ion processing...')
-                    // var exampleLoader = new LoadingSpinner('Predicting')
-
-                    //Delay submit so you can see the spinner spinning, then stop the loading spinner instead of submitting because we're on Codepen.
-                    // exampleForm.addEventListener('submit', function (event) {
-                    //     event.preventDefault()
-                    //     setTimeout(function () {
-                    //         exampleLoader.stop()
-                    //     }, 2000)
-                    // })
 
                 </script>
 </body>

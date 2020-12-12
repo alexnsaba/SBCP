@@ -24,7 +24,7 @@ The requirements of the SBCP system are:
 <img src='sbcpBackEnd/Screenshot.png'>
 </p>
 
-[Click Here to see the Online User Manual](https://laracasts.com). This will guide you on how to use the SBCP System 
+[Click Here to see the Online User Manual](https://finalyearprojectforsaab.files.wordpress.com/2020/12/sbcpusermanual.pdf). This will guide you on how to use the SBCP System 
 
 ### SBCP Developers
 
