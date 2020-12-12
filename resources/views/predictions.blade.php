@@ -23,21 +23,11 @@ Predictions
 {{--  <img id="previewImg" src="/examples/images/transparent.png">--}}
   </center><br/>
  <center>
-<<<<<<< HEAD
-{{--  <button type="submit" id="btnFetch" class="btn btn-primary btn-out-dashed">Predict</button>--}}
-     <button id="btnFetch" type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
-
-
-     <!--
-     <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
-     -->
-=======
 
   <button type="submit" class="btn btn-primary btn-out-dashed">Predict</button>
   <!--
   <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
   -->
->>>>>>> c5be0af1911500020f2b60a5843bb21723c1887e
 </center>
 </form>
 {{--      <div style="margin:3em;">--}}
