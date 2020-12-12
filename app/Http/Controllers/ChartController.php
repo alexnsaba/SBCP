@@ -1,11 +1,13 @@
 <?php
 namespace App\Http\Controllers;
+
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 
-class ChartController extends Controller
-{
+class ChartController extends Controller{
+
     //Logic for visualisation by date
     public function drawCharts(Request $request)
     {
@@ -15,6 +17,7 @@ class ChartController extends Controller
         $dates = explode(" ", $range);
         $date1 = $dates[0];
         $date2 = $dates[2];
+
         //over all predictions
         $negatives  =  DB::table('predictions')->where('results', 0)->whereBetween('created_at', [$date1, $date2])->count();
         $positives  =  DB::table('predictions')->where('results', 1)->whereBetween('created_at', [$date1, $date2])->count();
@@ -37,10 +40,10 @@ class ChartController extends Controller
             'east_negatives' => $east_negatives, 'east_positives' => $east_positives, 'north_negatives' => $north_negatives,
             'north_positives' => $north_positives,'from'=>$date1,'to'=>$date2
         ]);
-    }catch(Throwable $e){
-        report($e);
-        return false;
+    }catch(\Illuminate\Database\QueryException $e){
+        return view('error',['error'=>"Database Connection Failed",'error_name'=>"Visualisation Error"]);
     }
+
 }
 //Logic for visualision by year
 public function drawChartsByYear(Request $request)
@@ -107,9 +110,8 @@ public function drawChartsByYear(Request $request)
                 'negatives8'=>$negatives8,'positives8'=>$positives8,'negatives9'=>$negatives9,'positives9'=>$positives9,'negatives10'=>$negatives10,'positives10'=>$positives10,
                 'negatives11'=>$negatives11,'positives11'=>$positives11,'negatives12'=>$negatives12,'positives12'=>$positives12
                 ]);
-        }catch(Throwable $e){
-            report($e);
-            return false;
+        }catch(\Illuminate\Database\QueryException $e){
+            return view('error')->with('error',"Database Connection Failed");
         }
     }
 }////
