@@ -16,6 +16,20 @@ Predictions
 <input type="number" name="results" class="form-control form-control-primary" value="{{session()->get('class')}}" readonly required>
 </div>
 </div>
+
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Breast Side</label>
+        <div class="col-sm-10">
+            <select class="form-control form-control-primary" id="breastSide" name="breastSide" required>
+                <option value="" selected disabled>Select Breast Side</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+            </select>
+        </div>
+    </div>
+
+
 <div class="form-group row">
 <label class="col-sm-2 col-form-label">Clinical Notes</label>
 <div class="col-sm-10">

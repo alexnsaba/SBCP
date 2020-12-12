@@ -18,6 +18,8 @@ class CreatePredictionsTable extends Migration
             $table->integer('Results');
             $table->string('Clinical_notes');
             $table->string('image');
+            $table->string('breastSide');
+
             $table->string('region');
             $table->bigInteger('patient_id');
             $table->bigInteger('user_id');

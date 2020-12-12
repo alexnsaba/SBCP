@@ -13,11 +13,14 @@ class PatientController extends Controller
 {
     //
     public function index(){
-        $allPatients = Patient::all();
-        $patients = User::query()->where(id,Auth()->id())->patient;
+//        $allPatients = Patient::all();
+//        $patients = Patient::all();
+        $patients = Patient::all()->where('user_id',Auth()->id());
 
-//        return view('PatientDetails')->with(compact('patients'));
-        return dd($patients->location);
+//        $patients = User::query()->where(id,Auth()->id())->patient;
+
+        return view('PatientDetails')->with(compact('patients'));
+//        return dd($patients->location);
     }
 
     public function savePatientDetails(Request $request)

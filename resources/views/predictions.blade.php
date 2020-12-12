@@ -7,7 +7,7 @@ Predictions
 @endSection
 @section('content')
   <div class="card-body">
-      <form action="/predict" method="POST" enctype="multipart/form-data">
+      <form id="example" action="/predict" method="POST" enctype="multipart/form-data">
           @csrf
   <div class="form-group">
     <label for="Image">Upload Mammogram Image</label>
@@ -23,28 +23,14 @@ Predictions
 {{--  <img id="previewImg" src="/examples/images/transparent.png">--}}
   </center><br/>
  <center>
-<<<<<<< HEAD
 {{--  <button type="submit" id="btnFetch" class="btn btn-primary btn-out-dashed">Predict</button>--}}
      <button id="btnFetch" type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
+{{--     <div class="loading2"></div>--}}
 
 
-     <!--
-     <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
-     -->
-=======
-
-  <button type="submit" class="btn btn-primary btn-out-dashed">Predict</button>
-  <!--
-  <button type="reset" class="btn btn-danger btn-out-dashed">Cancel</button>
-  -->
->>>>>>> c5be0af1911500020f2b60a5843bb21723c1887e
 </center>
 </form>
-{{--      <div style="margin:3em;">--}}
-{{--          <form class="form-inline" id="topicForm" action="" method="POST">--}}
-{{--              <input type="text" id="inputTopic" name="topic" class="form-control mb-2 mr-sm-2" placeholder="Topic of interest" required autofocus/>--}}
-{{--              <button type="button" id="btnFetch" class="btn btn-primary mb-2">Submit</button>--}}
-{{--          </form>--}}
-{{--      </div>--}}
+
+
   </div>
 @endsection
