@@ -76,10 +76,13 @@ Predictions
 {{--  <img id="previewImg" src="/examples/images/transparent.png">--}}
   </center><br/>
  <center>
+
 {{--  <button type="submit" id="btnFetch" class="btn btn-primary btn-out-dashed">Predict</button>--}}
      <button type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
 {{--     <div class="loading2"></div>--}}
 {{--<div class="loading" ></div>--}}
+
+
 
 </center>
 </form>
