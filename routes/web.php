@@ -40,9 +40,12 @@ Route::get('predictionResults',function(){
 //   return view('PatientDetails');
 //})->middleware('auth');
 
-Route::get('patientDetails', 'PatientController@index')->middleware('auth');
+Route::get('patientDetails', 'RecordsView@savePatientDetails')->middleware('auth');
+//Route::get('patientDetails', 'PatientController@i')->middleware('auth');
 
-
+//Route::get('patientDetails',function(){
+//    return view('PatientDetails');
+//});
 
 Route::get('charts', 'ChartController@index')->name('chart.index')->middleware('auth');
 Route::get('records','RecordsView@index')->middleware('auth');
@@ -67,13 +70,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 //    return view('managepatients');
 //});
 Route::post('addpatient','PatientController@savePatientDetails');
-Route::get('managepatients','PatientController@displayPatients');
-Route::get('delete','PatientController@deletepatient');
-Route::get('delete/{id}','PatientController@deletepatient');
+Route::get('managepatients','PatientController@index');
+//Route::get('delete','PatientController@deletepatient');
+//Route::get('delete/{id}','PatientController@deletepatient');
 Route::get('userProfile',function(){
     return view('profile');
 })->middleware('auth');
 Route::post('update','UserController@update')->middleware('auth');
 Route::post('updatePicture','UserController@updatePicture')->middleware('auth');
 
+
+Route::get('delete/{id}','PatientController@deletepatient');
+Route::get('viewpatient','PatientController@displayPatients');
+
+Route::post('edit/{id}','PatientController@editPatient');
+Route::get('edit/{id}','PatientController@show');
 

@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use DB;
 use App\Prediction;
 use App\Images;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -21,6 +22,13 @@ class RecordsView extends Controller
         $preds = DB::select('select * from predictions');
         return view('records',['preds'=>$preds]);
     }
+
+
+    public function savePatientDetails(){
+        $patients = Patient::query()->where('user_id',Auth()->id())->get();
+        return view('PatientDetails')->with(compact('patients'));
+    }
+
 
     //Saving prediction results to the database
     public function saveDetails(Request $request)

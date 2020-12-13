@@ -13,19 +13,55 @@ Predictions
         }
 
         /* Just a really naive css example to swap the button contents with the spinner. Bring your own spinner & styles. */
+        /*.loading {*/
+        /*    opacity: 10;*/
+        /*}*/
+        /*.loading span {*/
+        /*    display: none;*/
+        /*    !*background-color: red;*!*/
+
+        /*}*/
+
         .loading {
-            opacity: .5;
+            opacity: 10;
+            /*display: none;*/
+            /*border: 16px solid #f3f3f3;*/
+            /*border-top: 16px solid #43A5F5;*/
+            /*border-radius: 30%;*/
+            /*width: 10px;*/
+            /*height: 10px;*/
+            /*animation: spin 2s linear infinite;*/
+            /*margin-top: 10px;*/
+            /*background-color: blue;*/
         }
         .loading span {
             display: none;
+            /*border: 16px solid #f3f3f3;*/
+            /*border-top: 16px solid #43A5F5;*/
+            /*border-radius: 30%;*/
+            /*width: 10px;*/
+            /*height: 10px;*/
+            /*animation: spin 2s linear infinite;*/
+            /*margin-top: 10px;*/
         }
+
+        /*@keyframes spin {*/
+        /*    0% {*/
+        /*        transform: rotate(0deg);*/
+        /*    }*/
+        /*    100% {*/
+        /*        transform: rotate(360deg);*/
+        /*    }*/
+        /*}*/
 
         /* Side note: I'm using opacity here to make the button look disabled. But you probably shouldn't set disable=true for the button on submit, even to prevent multiple clicks. There could be a server error, network problem or whatever. The user should be able to try to submit the form again any time without reloading the page. Also remember to have screen reader accessible text on your spinner. Take care of accessiblity! */
     </style>
 
   <div class="card-body">
       <form id="example" action="/predict" method="POST" enctype="multipart/form-data">
-          @csrf
+{{--      <form action="/predict" method="POST" enctype="multipart/form-data">--}}
+
+      @csrf
   <div class="form-group">
     <label for="Image">Upload Mammogram Image</label>
 
@@ -41,9 +77,9 @@ Predictions
   </center><br/>
  <center>
 {{--  <button type="submit" id="btnFetch" class="btn btn-primary btn-out-dashed">Predict</button>--}}
-     <button id="btnFetch" type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
+     <button type="submit" class="btn btn-primary btn-out-dashed" >Predict</button>
 {{--     <div class="loading2"></div>--}}
-
+{{--<div class="loading" ></div>--}}
 
 </center>
 </form>
@@ -95,6 +131,8 @@ Predictions
         LoadingSpinner.start = function (element, spinner) {
             element.classList.add('loading')
             return element.appendChild(spinner)
+            // return element.classList.add('loading')
+
         }
 
         LoadingSpinner.stop = function (element, spinner) {
@@ -108,8 +146,14 @@ Predictions
         //Example on how to use LoadingSpinner
 
         //Bring your own spinner. You can use any html as the spinner. You can find lots of cool spinners for example here on Codepen. I'm using just plain text. Maybe technically not a spinner, but this is more about the script than graphics.
+        // var exampleForm = document.querySelector('#example')
         var exampleForm = document.querySelector('#example')
-        var exampleLoader = new LoadingSpinner(exampleForm, 'ion in Progress...')
+
+        // var examp = document.querySelector('loading')
+
+        // var exampleLoader = new LoadingSpinner(exampleForm, 'ion in Progress...')
+        var exampleLoader = new LoadingSpinner(exampleForm,"ion in Progress...")
+
         //Delay submit so you can see the spinner spinning, then stop the loading spinner instead of submitting because we're on Codepen.
         // exampleForm.addEventListener('submit', function (event) {
         //     event.preventDefault()

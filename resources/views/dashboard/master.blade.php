@@ -29,6 +29,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('files/bower_components/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('files/assets/pages/waves/css/waves.min.css')}}" type="text/css" media="all">
     <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/feather/css/feather.css')}}">
+
+
+
     <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/themify-icons/themify-icons.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('files/bower_components/animate.css/css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/icofont/css/icofont.css')}}">
@@ -202,7 +205,7 @@
                             <div class="dropdown-primary dropdown">
 
                                 <div class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="profileImages/{{ Auth::user()->photo}}" class="img-radius"
+                                    <img src="{{asset('profileImages')}}/{{Auth::user()->photo}}" class="img-radius"
                                          alt="User-Profile-Image">
                                     <span> {{ Auth::user()->name }}</span>
                                     <i class="feather icon-chevron-down"></i>
@@ -269,28 +272,47 @@
                         <div class="pcoded-inner-navbar main-menu">
 
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu active">
-                                    <a href="Predictions" class="waves-effect waves-dark">
+                                <li class="active">
+                                    <a href="{{url('Predictions')}}" class="waves-effect waves-dark">
                                         <!-- <i class="feather icon-home"> -->
                                         <span class="pcoded-micon" style="font-size:20pt"><i
                                                 class="fa fa-stethoscope"></i></span>
                                         <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Predictions</span>
                                     </a>
                                 </li>
-                                <li class="pcoded-hasmenu active pcoded-trigger">
-                                    <a href="Visualisations" class="waves-effect waves-dark">
+                                <li class="active">
+                                    <a href="{{url('Visualisations')}}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon" style="font-size:20pt"><i
                                                     class="fa fa-chart-line"></i></span>
                                         <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Analysis</span>
                                     </a>
                                 </li>
                                 <li class="pcoded-hasmenu active pcoded-trigger">
-                                    <a href="managepatients" class="waves-effect waves-dark">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-users"
                                                                                                  aria-hidden="true"></i></span>
-                                        <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Manage
-                                                Patients</span>
+                                        <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Manage Patients</span>
                                     </a>
+                                    <ul class="pcoded-submenu">
+                                        <li>
+                                            <a href="{{url('managepatients')}}" class="waves-effect">
+                                                <span style="font-size: 16px">
+                                                    <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;
+                                                   Add Patient
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{url('viewpatient')}}" class="waves-effect">
+                                                <span style="font-size: 16px">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
+                                                    View Patient
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
