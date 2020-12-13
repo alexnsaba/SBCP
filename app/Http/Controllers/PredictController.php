@@ -21,7 +21,11 @@ class PredictController extends Controller
         $request->image->move(public_path('images'), $imageName);
         $client = new Client();
 
-        $imageUrl = "/home/arnoldkk/SBCP/public/images/".$imageName;
+//        $imageUrl = "/home/arnoldkk/SBCP/public/images/".$imageName;
+//        $imageUrl = "{{ config('app.dir') }}".$imageName;
+        $value = config('app.dir');
+
+
 
         $res = $client->request('POST', "http://127.0.0.1:5000/upload", [
             'multipart' => [
@@ -32,7 +36,9 @@ class PredictController extends Controller
                     ],
                     'name'     => 'image',
 
-                    'contents' => file_get_contents("/home/arnoldkk/SBCP/public/images/".$imageName),
+//                    'contents' => file_get_contents("/home/arnoldkk/SBCP/public/images/".$imageName),
+                    'contents' => file_get_contents($value.$imageName),
+
 
                 ],
             ],
@@ -45,10 +51,16 @@ class PredictController extends Controller
         $predicted_class =  json_decode($prediction)->predicted_class;
         session(['class' => $predicted_class]);
         session(['image' => $imageName]);
+
+
+
 //        $accuracy = json_decode($prediction)->label;
 
 //        return dd($accuracy->label);
         return view("Results",compact('accuracy','label','predicted_class'));
+
+
 //        return view('Results')->with('predict', json_decode($prediction, true));
+//        return dd($value);
     }
 }

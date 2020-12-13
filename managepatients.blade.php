@@ -3,7 +3,7 @@
 Visualisations
 @endsection
 @section('pageHeader')
-<h3 class="card-header">Manage Patients</h3> 
+<h3 class="card-header">Manage Patients</h3>
 @endSection
 @section('content')
   <div class="card-body">

@@ -67,9 +67,12 @@ class Kernel extends ConsoleKernel
 
 
 
-    })->daily();
+//    })->daily();
+    })->everyMinute();
 
-    }
+
+
+}
 //    private function sendEmailToUser($userId, $reminders)
 //    {
 //        $user = User::find($userId);
@@ -79,7 +82,7 @@ class Kernel extends ConsoleKernel
     private function sendEmailToUser($reminder)
     {
 //        $user = User::find($userId);
-        $patient = Patient::query()->where('Email',$reminder->email)->get();
+        $patient = Patient::query()->where('Email',$reminder->data)->get();
         Mail::to($patient)->send(new ReminderEmailDigest($reminder));
     }
 

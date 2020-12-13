@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Location;
 use App\Patient;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use Illuminate\Http\Response;
 use DB;
 use App\Prediction;
 use App\Images;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -21,6 +23,13 @@ class RecordsView extends Controller
         return view('records',['preds'=>$preds]);
     }
 
+
+    public function savePatientDetails(){
+        $patients = Patient::query()->where('user_id',Auth()->id())->get();
+        return view('PatientDetails')->with(compact('patients'));
+    }
+
+
     //Saving prediction results to the database
     public function saveDetails(Request $request)
     {
@@ -29,6 +38,7 @@ class RecordsView extends Controller
         $clinical_notes=$request['clinical_notes'];
         $reminder = $request['reminder'];
         $checkUpDate = $request['checkupDate'];
+        $breastSide = $request['breastSide'];
         //$image = $request->file('mammogram');
         //$imageName = 'SBCP'.time().'.'.$image->extension();
         //$image->move(public_path('images'),$imageName);
@@ -40,7 +50,10 @@ class RecordsView extends Controller
         $patient = Patient::query()->where('id',$patient_id)->get();
 
 //        $patient_district = Patient::query()->where('id',$patient_id)->get();
-        $location = $patient->location;
+        $location = $patient[0]->location_id;
+        $region = Location::query()->where('id',$location)->get();
+
+
 //        $region = DB::table('locations')->where('name',$patient[0]->Location)->get();
 
 
@@ -50,8 +63,11 @@ class RecordsView extends Controller
         DB::table('predictions')->insert(
             ['Results' =>$result, 'Clinical_notes' =>$clinical_notes,
                 'image'=>$image, 'Patient_id' =>$patient_id,
-                'Doctor_id' =>$doctor_id,  'region'=>$location->region,
-//                'Doctor_id' =>$doctor_id,  'region'=>$region[0]->region,
+                'user_id' =>$doctor_id,
+                'region'=>$region[0]->region,
+                'breastSide'=>$breastSide,
+//                'Doctor_id' =>$doctor_id,
+//                'region'=>$region[0]->region,
                 "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
                 "updated_at" => \Carbon\Carbon::now()]
         );
@@ -61,7 +77,7 @@ class RecordsView extends Controller
                 'patient_id'=>$patient_id,
 
                 'reminder_date'=>$checkUpDate,
-                'email'=>$patient->Email,
+                'email'=>$patient[0]->Email,
 //                'email'=>$patient[0]->Email,
 
                 'status'=>'pending'
@@ -74,7 +90,7 @@ class RecordsView extends Controller
 
 
         return redirect('/Predictions')->with('success','Patient Details successfully added.');
-//        return dd($region[0]->region);
+//        return dd($patient[0]->location_id);
 
     }
 

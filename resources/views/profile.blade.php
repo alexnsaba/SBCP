@@ -46,43 +46,64 @@
         </div>
     </div>
 
-    <div class="card" style="text-align:center;width: 60rem;margin-left:10rem">
+    <div class="card" style="text-align:center">
 
         <form method="post" action="/update">
             @csrf
-            <!--
-                                                    <div class="text-center">
-                                                        <span style="font-size: 25px"><img src="profileImages/{{ Auth::user()->photo }}" height="220" width="220"
-                                                                class="img-radius" alt="profile.png">
-                                                        </span>
-                                                    </div>
-                                                 -->
+
             <div class="card-body">
-                <div class="input-group input-group-lg">
+
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa fa-user"
-                                aria-hidden="true"></i>&nbsp;Name &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</span>
+                        <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span class="input-group-text">Name</span>
                     </div>
-                    <input type="text" name="name" class="form-control" aria-label="Large"
-                        aria-describedby="inputGroup-sizing-sm" value="{{ Auth::user()->name }}">
+                    <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
                 </div>
-                <div class="input-group input-group-lg">
+
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa fa-user-o"
-                                aria-hidden="true"></i>&nbsp;Username &nbsp;&nbsp; &nbsp;</span>
+                        <span class="input-group-text"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                        <span class="input-group-text">User Name</span>
                     </div>
-                    <input type="text" name="user" class="form-control" aria-label="Large"
-                        aria-describedby="inputGroup-sizing-sm" value="{{ Auth::user()->username }}">
+                    <input type="text" name="user" class="form-control" value="{{ Auth::user()->username }}">
                 </div>
-                <div class="input-group input-group-lg">
+
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa fa-envelope-o"
-                                aria-hidden="true"></i>&nbsp;Email Address</span>
+                        <span class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="input-group-text">Email Address</span>
                     </div>
-                    <input type="text" name="mail" class="form-control" aria-label="Large"
-                        aria-describedby="inputGroup-sizing-sm" value="{{ Auth::user()->email }}">
+                    <input type="text" name="mail" class="form-control" value="{{ Auth::user()->email }}">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2 btn-out-dashed" style="font-size:20px">Update</button>
+
+
+
+{{--                <div class="input-group input-group-sm">--}}
+{{--                    <div class="input-group-prepend">--}}
+{{--                        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-user"--}}
+{{--                                aria-hidden="true"></i>Name</span>--}}
+{{--                    </div>--}}
+{{--                    <input type="text" name="name" class="form-control" aria-label="Large"--}}
+{{--                        aria-describedby="inputGroup-sizing-sm" value="{{ Auth::user()->name }}">--}}
+{{--                </div>--}}
+{{--                <div class="input-group input-group-sm">--}}
+{{--                    <div class="input-group-prepend">--}}
+{{--                        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-user-o"--}}
+{{--                                aria-hidden="true"></i>Username</span>--}}
+{{--                    </div>--}}
+{{--                    <input type="text" name="user" class="form-control" aria-label="Large"--}}
+{{--                        aria-describedby="inputGroup-sizing-sm" value="{{ Auth::user()->username }}">--}}
+{{--                </div>--}}
+{{--                <div class="input-group input-group-sm">--}}
+{{--                    <div class="input-group-prepend">--}}
+{{--                        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-envelope-o"--}}
+{{--                                aria-hidden="true"></i>Email Address</span>--}}
+{{--                    </div>--}}
+{{--                    <input type="text" name="mail" class="form-control" aria-label="Large"--}}
+{{--                        aria-describedby="inputGroup-sizing-sm" value="{{ Auth::user()->email }}">--}}
+{{--                </div>--}}
+                <button type="submit" class="btn btn-primary mb-2 btn-out-dashed" style="font-size:15px">Update</button>
             </div>
         </form>
     </div>
