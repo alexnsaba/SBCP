@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Patient;
-use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use DB;
@@ -25,57 +23,19 @@ class RecordsView extends Controller
     public function saveDetails(Request $request)
     {
         $result=$request['results'];
-        $image = $request->session()->get('image');
         $clinical_notes=$request['clinical_notes'];
-        $reminder = $request['reminder'];
-        $checkUpDate = $request['checkupDate'];
         //$image = $request->file('mammogram');
         //$imageName = 'SBCP'.time().'.'.$image->extension();
         //$image->move(public_path('images'),$imageName);
-
-//        $doctor_id=$request['doctor_id'];
-        $doctor_id=Auth()->id();
+        
+        $doctor_id=$request['doctor_id'];
         $patient_id=$request['patient_id'];
-//        $region =DB::table('patients')->where('id',$patient_id)->location()->region;
-        $patient = Patient::query()->where('id',$patient_id)->get();
-
-//        $patient_district = Patient::query()->where('id',$patient_id)->get();
-        $location = $patient->location;
-//        $region = DB::table('locations')->where('name',$patient[0]->Location)->get();
-
-
-
-
-//        $region=$request['region'];
+        $region=$request['region'];
         DB::table('predictions')->insert(
-            ['Results' =>$result, 'Clinical_notes' =>$clinical_notes,
-                'image'=>$image, 'Patient_id' =>$patient_id,
-                'Doctor_id' =>$doctor_id,  'region'=>$location->region,
-//                'Doctor_id' =>$doctor_id,  'region'=>$region[0]->region,
-                "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
-                "updated_at" => \Carbon\Carbon::now()]
+            ['Results' =>$result, 'Clinical_notes' =>$clinical_notes, 'Patient_id' =>$patient_id, 'Doctor_id' =>$doctor_id,  'region'=>$region]
         );
-        DB::table('reminders')->insert(
-            [
-                'data'=>$reminder,
-                'patient_id'=>$patient_id,
-
-                'reminder_date'=>$checkUpDate,
-                'email'=>$patient->Email,
-//                'email'=>$patient[0]->Email,
-
-                'status'=>'pending'
-
-            ]
-        );
-
-        $request->session()->forget('class');
-        $request->session()->forget('image');
-
-
-        return redirect('/Predictions')->with('success','Patient Details successfully added.');
-//        return dd($region[0]->region);
-
+        return redirect('/patientDetails')->with('success','Patient Details successfully added.');
+        
     }
 
     //
