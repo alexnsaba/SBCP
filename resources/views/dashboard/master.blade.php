@@ -280,12 +280,41 @@
                                         <span class="pcoded-mtext" style="font-size:16pt"> &nbsp; Predictions</span>
                                     </a>
                                 </li>
+                                <!--
                                 <li class="active">
                                     <a href="{{url('Visualisations')}}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon" style="font-size:20pt"><i
                                                     class="fa fa-chart-line"></i></span>
                                         <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Analysis</span>
                                     </a>
+                                </li>
+                                -->
+                                <li class="pcoded-hasmenu active pcoded-trigger">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon" style="font-size:20pt"><i class="fa fa-chart-line"
+                                                                                                 aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext" style="font-size:16pt"> &nbsp;Analysis </span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li>
+                                            <a href="{{url('Visualisations')}}" class="waves-effect">
+                                                <span style="font-size: 16px">
+                                                    <i class="fa fa-area-chart" aria-hidden="true"></i>&nbsp;
+                                                   Visualise by Date
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{url('Visualisations_year')}}" class="waves-effect">
+                                                <span style="font-size: 16px">
+                                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;
+                                                    Visualise by Year
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
                                 <li class="pcoded-hasmenu active pcoded-trigger">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
