@@ -253,11 +253,13 @@
                                                 <i class="feather icon-user"></i> Profile
                                             </a>
                                         </li>
+                                        {{--
                                         <li>
                                             <a href="#">
                                                 <i class="feather icon-lock"></i> Lock Screen
                                             </a>
                                         </li>
+                                        --}}
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
