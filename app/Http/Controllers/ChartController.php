@@ -41,7 +41,7 @@ class ChartController extends Controller{
             'north_positives' => $north_positives,'from'=>$date1,'to'=>$date2
         ]);
     }catch(\Exception $e){
-        return view('error',['error'=>"Database Connection Failed",'error_name'=>"Visualisation Error"]);
+        return view('error',['error'=>"Visualisation Process Failed",'error_name'=>"Visualisation Error"]);
     }
 }
 //Logic for visualision by year
