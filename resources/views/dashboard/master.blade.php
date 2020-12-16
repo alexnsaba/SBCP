@@ -70,7 +70,7 @@
 
     <!--Styles for the time range picker -->
 {{--    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />--}}
-{{--    <link rel="stylesheet" href="{{asset('dist/daterangepicker.css')}}" />--}}
+   <link rel="stylesheet" href="{{asset('dist/daterangepicker.css')}}" />
     <style type="text/css">
         #wrapper {
             width: 800px;
