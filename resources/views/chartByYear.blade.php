@@ -11,35 +11,34 @@
 
      <div class="row">
     <div class="col-sm">
-    <h4 >Bar chart of Patients Diagnosed of Breast Cancer in {{$year}}</h4>
+    <h4 >Bar chart of Breast Cancer Predictions made in {{$year}}</h4>
     <hr style="background:black;">
     @if(($negatives > 0) || ($positives > 0))
     <div id="top_x_div" style="width: 300px; height: 600px;"></div>
     @else
-    <h5> No Patient was diagnosed in {{$year}}</h5>
+    <h5> No Breast Cancer Prediction was made in {{$year}}</h5>
     @endif
     </div>
 
     <div class="col-sm">
-    <h4>Pie chart of Patients Diagnosed of Breast Cancer in {{$year}}</h4>
+    <h4>Pie chart of Breast Cancer Predictions made in {{$year}}</h4>
     <hr style="background:black;">
     @if(($negatives > 0) || ($positives > 0))
     <div id="piechart_3d" style="width: 550px; height: 500px;"></div>
    @else
-    <h5> No Patient was diagnosed in in {{$year}}</h5>
+    <h5> No Breast Cancer Prediction was made in {{$year}}</h5>
     @endif
     </div>
-
   </div>
   <br/><br/>
-  <h4>Monthly Distribution of Patients Diagnosed of Breast Cancer  in {{$year}}</h4>
+  <h4>Monthly Distribution of Breast Cancer Predictions made in {{$year}}</h4>
  <hr style="background:black;">
  @if(($negatives1 > 0) || ($positives1 > 0) || ($negatives2 > 0) || ($positives2 > 0) || ($negatives3 > 0) || ($positives3 > 0) || ($negatives4 > 0) || ($positives4 > 0)
  || ($negatives5 > 0) || ($positives5 > 0)|| ($negatives6 > 0) || ($positives6 > 0)|| ($negatives7 > 0) || ($positives7 > 0) || ($negatives8 > 0) || ($positives8 > 0)
  || ($negatives9 > 0) || ($positives9 > 0)|| ($negatives10 > 0) || ($positives10 > 0)|| ($negatives11 > 0) || ($positives11 > 0) || ($negatives12 > 0) || ($positives12 > 0))
   <div id="barchart_material" style="width: 900px; height: 500px;"></div>
  @else
-  <h5> No Patient was diagnosed in {{ $year}}</h5>
+  <h5> No Breast Cancer Prediction was made in {{ $year}}</h5>
  @endif
      </div>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

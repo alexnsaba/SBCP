@@ -22,6 +22,7 @@ class NotificationController extends Controller
     }
 
     public function sendOfferNotification() {
+        try{
         $userSchema = User::first();
 
         $offerData = [
@@ -36,5 +37,9 @@ class NotificationController extends Controller
         Notification::send($userSchema, new PatientRevisit($offerData));
 
         dd('Task completed!');
+    }
+    catch(\Exception $e){
+        return view('error',['error'=>"Sending Notification Failed",'error_name'=>"Notification Error"]);
+    }
     }
 }

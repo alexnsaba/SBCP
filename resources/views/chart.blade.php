@@ -9,32 +9,32 @@ Visualisations
  <div class="container">
   <div class="row">
     <div class="col-sm">
-    <h4>Bar chart of Patients Diagnosed of Breast Cancer From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
+    <h4>Bar chart of Breast Cancer Predictions From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
     <hr style="background:black;">
     @if(($negatives > 0) || ($positives > 0))
     <div id="top_x_div" style="width: 300px; height: 600px;"></div>
     @else
-    <h5> No Patient was diagnosed in the above time range</h5>
+    <h5> No Breast Cancer Prediction was made in the above time range</h5>
     @endif
     </div>
     <div class="col-sm">
-    <h4>Pie chart of Patients Diagnosed of Breast Cancer  From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
+    <h4>Pie chart of Breast Cancer Predictions From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
     <hr style="background:black;">
     @if(($negatives > 0) || ($positives > 0))
     <div id="piechart_3d" style="width: 550px; height: 500px;"></div>
    @else
-    <h5> No Patient was diagnosed in the above time range</h5>
+    <h5> No Breast Cancer Prediction was made in the above time range</h5>
     @endif
     </div>
 
   </div>
   <br/><br/>
-  <h4>Regional Distribution of Patients Diagnosed of Breast Cancer  From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
+  <h4>Regional Distribution of Breast Cancer Predictions From <strong>{{$from}}</strong> To <strong>{{$to}}</strong></h4>
  <hr style="background:black;">
  @if(($central_negatives > 0) || ($central_positives > 0) || ($west_negatives > 0) || ($west_positives > 0) || ($east_negatives > 0) || ($east_positives > 0) || ($north_negatives > 0) || ($north_positives > 0))
   <div id="barchart_material" style="width: 900px; height: 500px;"></div>
  @else
-  <h5> No Patient was diagnosed in the above time range</h5>
+  <h5> No Breast Cancer Prediction was made in the above time range</h5>
  @endif
 </div>
 

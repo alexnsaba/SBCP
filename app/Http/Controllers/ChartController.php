@@ -40,10 +40,9 @@ class ChartController extends Controller{
             'east_negatives' => $east_negatives, 'east_positives' => $east_positives, 'north_negatives' => $north_negatives,
             'north_positives' => $north_positives,'from'=>$date1,'to'=>$date2
         ]);
-    }catch(\Illuminate\Database\QueryException $e){
+    }catch(\Exception $e){
         return view('error',['error'=>"Database Connection Failed",'error_name'=>"Visualisation Error"]);
     }
-
 }
 //Logic for visualision by year
 public function drawChartsByYear(Request $request)
