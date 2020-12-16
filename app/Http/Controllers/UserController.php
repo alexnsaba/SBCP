@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function update(Request $request){
+        try{
         //obtaining form parameters
         $name = $request['name'];
         $user = $request['user'];
@@ -16,8 +17,13 @@ class UserController extends Controller
         User::where('id',Auth::user()->id)
         ->update(['name' => $name,'username' => $user,'email' => $mail]);
         return redirect()->back()->with('message', 'Your profile has been successfully updated');
+        }
+        catch(\Exception $e){
+            return view('error',['error'=>"Updating Profile Failed",'error_name'=>"Profile Update Error"]);
+        }
     }
     public function updatePicture(Request $request){
+        try{
         $image = $request->file('photo');
         $imageName = Auth::user()->name .'_'. time() . '.' . $image->extension();
         $image->move(public_path('profileImages'), $imageName);
@@ -25,5 +31,9 @@ class UserController extends Controller
        User::where('id',Auth::user()->id)
        ->update(['photo' => $imageName]);
        return redirect()->back()->with('message', 'Your profile Picture has been successfully updated');
+    }
+    catch(\Exception $e){
+        return view('error',['error'=>"Updating Profile Picture Failed",'error_name'=>"Profile Update Error"]);
+    }
     }
 }

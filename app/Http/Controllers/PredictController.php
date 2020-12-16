@@ -11,12 +11,10 @@ class PredictController extends Controller
         dd("testing");
     }
     public function getPrediction(Request $request){
-
+        try{
 //        $request->validate([
 //            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 //        ]);
-
-
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $client = new Client();
@@ -52,8 +50,6 @@ class PredictController extends Controller
         session(['class' => $predicted_class]);
         session(['image' => $imageName]);
 
-
-
 //        $accuracy = json_decode($prediction)->label;
 
 //        return dd($accuracy->label);
@@ -62,5 +58,9 @@ class PredictController extends Controller
 
 //        return view('Results')->with('predict', json_decode($prediction, true));
 //        return dd($value);
+        }
+        catch(\Exception $e){
+            return view('error',['error'=>"Prediction Process Failed",'error_name'=>"Prediction Error"]);
+        }
     }
 }

@@ -33,6 +33,9 @@ Route::post('/predict',[PredictController::class, 'getPrediction'])->name('image
 Route::get('Visualisations/', function () {
     return view('visualisation');
 })->middleware('auth');
+Route::get('Visualisations_year/', function () {
+    return view('visualisation_by_year');
+})->middleware('auth');
 Route::get('predictionResults',function(){
     return view('Results');
 })->middleware('auth');
@@ -88,4 +91,6 @@ Route::get('viewpatient','PatientController@displayPatients');
 
 Route::post('edit/{id}','PatientController@editPatient');
 Route::get('edit/{id}','PatientController@show');
+
+
 
