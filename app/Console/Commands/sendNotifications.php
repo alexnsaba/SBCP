@@ -2,6 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Notifications\Revisit;
+use App\Notifications\SendDocLinkNotification;
+use App\Reminder;
+use App\User;
 use Illuminate\Console\Command;
 
 class sendNotifications extends Command
@@ -11,7 +15,7 @@ class sendNotifications extends Command
      *
      * @var string
      */
-    protected $signature = 'notifications:emails';
+    protected $signature = 'send:reminder';
 
     /**
      * The console command description.
@@ -37,6 +41,26 @@ class sendNotifications extends Command
      */
     public function handle()
     {
+        $notification = Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get();
+
+        Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get()->each(function ($reminder) {
+
+
+//            $remind = Reminder::create([
+//                'name' => $reminder->patient->Name,
+//                'email' => $reminder->patient->Email,
+//                'token' => str_random(60),
+//            ]);
+
+//            $invite->notify(new UserInvite()
+             $reminder->status ="sent";
+             $reminder->save();
+             $reminder->notify(new Revisit($reminder));
+
+//            $reminder->patient->Email;
+
+
+        });
         //
     }
 }

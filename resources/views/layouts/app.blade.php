@@ -27,19 +27,19 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/bower_components/bootstrap/css/bootstrap.min.css')}}">
 
-    <link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
+    <link rel="stylesheet" href="{{asset('files/assets/pages/waves/css/waves.min.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/feather/css/feather.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/themify-icons/themify-icons.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/icofont/css/icofont.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="../files/assets/icon/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/icon/font-awesome/css/font-awesome.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../files/assets/css/pages.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/pages.css')}}">
     <style>
         label {
             font-size: 16px !important;
@@ -62,7 +62,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'SBCP') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -114,7 +114,7 @@
 
             @yield('content')
         </section>
-    <script type="ea90d71b1e29fa5bff577e22-text/javascript" src="../files/bower_components/jquery/js/jquery.min.js">
+    <script type="ea90d71b1e29fa5bff577e22-text/javascript" src="{{asset('files/bower_components/jquery/js/jquery.min.js')}}">
     </script>
     <script type="ea90d71b1e29fa5bff577e22-text/javascript"
         src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>

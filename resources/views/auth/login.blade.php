@@ -93,8 +93,20 @@
                                             class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
                                     </div>
                                 </div>
-                                <p class="text-inverse text-left">Don't have an account?<a href="{{ route('register') }}"
-                                        style="color: #0a6aa1"> <b>Register here </b></a></p>
+                                <p class="text-inverse text-left">Don't have an account?<a href="{{ route('register') }}" style="color: #0a6aa1"> <b>Register here </b></a></p><br>
+
+{{--                                <p class="text-inverse text-left">Don't have an account?<a href="{{ route('register') }}" style="color: #0a6aa1"> <b>Register here </b></a></p>--}}
+
+
+
+
+{{--                                <div class="forgot-phone text-right float-right">--}}
+{{--                                    @if (Route::has('password.request'))--}}
+{{--                                        <a href="{{ route('password.request') }}" class="text-right f-w-600"> Forgot--}}
+{{--                                            Password?</a>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+
 
                             </div>
                         </div>

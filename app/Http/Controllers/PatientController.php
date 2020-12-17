@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Reminder;
 use Validator;
 use App\Location;
 use App\Patient;
@@ -125,6 +126,20 @@ class PatientController extends Controller
         DB::delete('delete from patients where id = ?',[$id]);
         //return view('managepatients',['patients'=>$patients]);
         return redirect('viewpatient')->with('success','Patient deleted successfully added');
+
+     }
+
+     public function noti(){
+//        $notification = Reminder::whereDate('created_at', now()->subDay(36))->where('status', 'pending')->get();
+         $notification = Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get();
+
+         foreach ($notification as $reminder) {
+                $reminder->patient->Email;
+//             $reminder->status ="sent";
+//             $reminder->save();
+         }
+
+        return dd($notification);
 
      }
 

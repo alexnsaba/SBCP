@@ -89,3 +89,4 @@ Route::get('viewpatient','PatientController@displayPatients');
 Route::post('edit/{id}','PatientController@editPatient');
 Route::get('edit/{id}','PatientController@show');
 
+Route::get('hello','PatientController@noti');
