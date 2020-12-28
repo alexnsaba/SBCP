@@ -43,6 +43,7 @@ View patient
         <th>Email</th>
         <th>Edit</th>
         <th>Delete</th>
+        <th>Prediction Results</th>
     </tr>
 </thead>
 <tbody>
@@ -55,6 +56,7 @@ View patient
     <td>{{ $patient->Email }}</td>
     <td><a class="fa fa-pencil" href = 'edit/{{ $patient->id }}' style= "color: dodgerblue; font-size:14pt"></a></td>
     <td><a class="fa fa-trash" href = 'delete/{{ $patient->id }}' style= "color: red; font-size:14pt"></a></td>
+    <td><a class="fa fa-eye" href = 'singlepatient/{{ $patient->id }}' style= "color: green; font-size:14pt"></a></td>
 </tr>
 @endforeach
 </table>

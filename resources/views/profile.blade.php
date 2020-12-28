@@ -3,14 +3,15 @@
     User profile
 @endsection
 @section('content')
-    @if (session()->has('message'))
-        <div class="alert alert-success alert-dismissible fade show">
-            <strong>{{ session()->get('message') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+{{--    @if (session()->has('message'))--}}
+{{--        <div class="alert alert-success alert-dismissible fade show">--}}
+{{--            <strong>{{ session()->get('message') }}</strong>--}}
+{{--            <button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
+{{--                <span aria-hidden="true">&times;</span>--}}
+{{--            </button>--}}
+{{--        </div>--}}
+{{--    @endif--}}
+@include('message')
     <h3 style="text-align:center">{{ Auth::user()->name }} 's Profile</h3>
     <div class="profile">
         <button class="my_file" data-toggle="modal" data-target="#exampleModalCenter"></button>

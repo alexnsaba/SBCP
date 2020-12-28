@@ -44,7 +44,7 @@ class Revisit extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Hello '.$this->reminder->patient->Name)
+            ->greeting('Hello '.$this->reminder->patient->Name.',')
             ->subject('Reminder on Next Check Up')
             ->line('We are reminding you to come back for the next check up on '.date('d-m-Y', strtotime($this->reminder->reminder_date)))
             ->line('Message: '.$this->reminder->data)

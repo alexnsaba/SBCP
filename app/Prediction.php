@@ -27,5 +27,8 @@ class Prediction extends Model
     {
         return $this->hasOne('App\User');
     }
+    public function patient(){
+        return $this->belongsTo('App\Patient');
+    }
 
 }

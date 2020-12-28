@@ -41,9 +41,10 @@ class sendNotifications extends Command
      */
     public function handle()
     {
-        $notification = Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get();
+        try {
+            $notification = Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get();
 
-        Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get()->each(function ($reminder) {
+            Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get()->each(function ($reminder) {
 
 
 //            $remind = Reminder::create([
@@ -53,14 +54,17 @@ class sendNotifications extends Command
 //            ]);
 
 //            $invite->notify(new UserInvite()
-             $reminder->status ="sent";
-             $reminder->save();
-             $reminder->notify(new Revisit($reminder));
+
+                $reminder->notify(new Revisit($reminder));
+                $reminder->status = "sent";
+                $reminder->save();
 
 //            $reminder->patient->Email;
 
 
-        });
-        //
+            });
+        } catch(\Exception $e){
+            return view('error',['error'=>"Sending Notification Failed, Hint: No Internet connection",'error_name'=>"Notification Error"]);
+        }
     }
 }

@@ -40,10 +40,9 @@ class ChartController extends Controller{
             'east_negatives' => $east_negatives, 'east_positives' => $east_positives, 'north_negatives' => $north_negatives,
             'north_positives' => $north_positives,'from'=>$date1,'to'=>$date2
         ]);
-    }catch(\Illuminate\Database\QueryException $e){
-        return view('error',['error'=>"Database Connection Failed",'error_name'=>"Visualisation Error"]);
+    }catch(\Exception $e){
+        return view('error',['error'=>"Visualisation Process Failed, Hint: You entered an invalid time range ",'error_name'=>"Visualisation Error"]);
     }
-
 }
 //Logic for visualision by year
 public function drawChartsByYear(Request $request)
@@ -110,8 +109,8 @@ public function drawChartsByYear(Request $request)
                 'negatives8'=>$negatives8,'positives8'=>$positives8,'negatives9'=>$negatives9,'positives9'=>$positives9,'negatives10'=>$negatives10,'positives10'=>$positives10,
                 'negatives11'=>$negatives11,'positives11'=>$positives11,'negatives12'=>$negatives12,'positives12'=>$positives12
                 ]);
-        }catch(\Illuminate\Database\QueryException $e){
-            return view('error')->with('error',"Database Connection Failed");
+        }catch(\Exception $e){
+            return view('error',['error'=>"Visualisation Process Failed Hint: You selected invalid year",'error_name'=>"Visualisation Error"]);
         }
     }
 }////

@@ -13,52 +13,50 @@ use Illuminate\Support\Facades\Auth;
 class PatientController extends Controller
 {
     //
-    public function index(){
+    public function index()
+    {
+        try {
 //        $patients = Patient::all()->where('user_id',Auth()->id());
 //        return view('PatientDetails')->with(compact('patients'));
-        $locations = Location::all();
+            $locations = Location::all();
 
-        return view('managepatients')->with(compact('locations'));
+            return view('managepatients')->with(compact('locations'));
+        } catch (\Exception $e) {
+            return view('error', ['error' => "View Patients Failed , Hint: Database connection failure", 'error_name' => "Patients Management Error"]);
+        }
     }
 
     public function savePatientDetails(Request $request)
     {
+        try {
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|unique:patients',
+                'location' => 'required',
+                'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+                'email' => 'required|email|unique:patients'
 
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:patients',
-            'location' => 'required',
-            'phone_number'=> 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'email' => 'required|email|unique:patients'
-
-        ]);
-        if($validator->fails()) {
-            return redirect()->back()
-                ->withInput()
-                ->withErrors($validator);
-        }else{
-            $name=$request['name'];
-            $location=$request['location'];
-            $phone_number=$request['phone_number'];
-            $email=$request['email'];
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors($validator);
+            } else {
+                $name = $request['name'];
+                $location = $request['location'];
+                $phone_number = $request['phone_number'];
+                $email = $request['email'];
 
 //            DB::table('patients')->insert(
 //                ['Name' =>$name, 'Location' =>$location, 'Phone_number' =>$phone_number, 'Email' =>$email]
 //            );
 
-            DB::table('patients')->insert(
-                ['Name' =>$name, 'location_id' =>$location, 'Phone_number' =>$phone_number, 'Email' =>$email,'user_id'=>Auth()->id(),
-                    "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
-                    "updated_at" => \Carbon\Carbon::now()]
-            );
-            return redirect('managepatients')->with('success','Patient Record successfully added');
-        }
-
-
-
-
-
-
-//
+                DB::table('patients')->insert(
+                    ['Name' => $name, 'location_id' => $location, 'Phone_number' => $phone_number, 'Email' => $email, 'user_id' => Auth()->id(),
+                        "created_at" => \Carbon\Carbon::now(), # new \Datetime()
+                        "updated_at" => \Carbon\Carbon::now()]
+                );
+                return redirect('managepatients')->with('success', 'Patient Record successfully added');
+            }
 //        $name=$request['name'];
 //        $location=$request['location'];
 //
@@ -75,72 +73,100 @@ class PatientController extends Controller
 //        );
 //        return redirect('managepatients')->with('success','Patient Record successfully added');
 
+
+        } catch (\Exception $e) {
+            return view('error', ['error' => "Saving Patient Failed Hint: Database connection failure", 'error_name' => "Patients Management Error"]);
+        }
     }
 
-
-
-
-
-    public function displayPatients(){
-
-        $patients = Patient::all()->where('user_id',Auth()->id());
+    public function displayPatients()
+    {
+        try {
+            $patients = Patient::all()->where('user_id', Auth()->id());
 //            $patients = Patient::all()->where('id',Auth()->id());
 
-
-
-        return view('viewpatient')->with(compact('patients'));
+            return view('viewpatient')->with(compact('patients'));
 
 //        foreach ($patients as $item) {
 //            return dd($item->location);
 //
 //        }
-
+        } catch (\Exception $e) {
+            return view('error', ['error' => "Display Patients Failed Hint: Database connection failure", 'error_name' => "Patient Management Error"]);
+        }
 
     }
 
-
-    public function show($id) {
-
-        $patients = Patient::query()->where('id',$id)->get();
-        $locations = Location::all();
-
+    public function show($id)
+    {
+        try {
+            $patients = Patient::query()->where('id', $id)->get();
+            $locations = Location::all();
 //        $patients = DB::select('select * from patients where id = ?',[$id]);
 //        return view('patientupdate',['patients'=>$patients]);
-        return view('patientupdate')->with(compact('patients','locations'));
+            return view('patientupdate')->with(compact('patients', 'locations'));
+        } catch (\Exception $e) {
+            return view('error', ['error' => "Patient Not Found Hint: Database connection failure", 'error_name' => "Patient Management Error"]);
+        }
     }
 
 
-    public function editPatient(Request $request,$id) {
-        $name = $request->input('name');
-        $location = $request->input('location');
-        $phoneNo = $request->input('phone_number');
-        $email = $request->input('email');
-        DB::update('update patients set Name = ?,location_id=?,
-        Phone_number=?,Email=? where id = ?',[$name,$location,$phoneNo, $email,$id]);
-        return redirect('viewpatient')->with('success','Patient details successfully updated');
+    public function editPatient(Request $request, $id)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'location' => 'required',
+                'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+                'email' => 'required|email'
 
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors($validator);
+            }
+            else{
+                $name = $request->input('name');
+                $location = $request->input('location');
+                $phoneNo = $request->input('phone_number');
+                $email = $request->input('email');
+                DB::update('update patients set Name = ?,location_id=?,
+        Phone_number=?,Email=? where id = ?', [$name, $location, $phoneNo, $email, $id]);
+                return redirect('viewpatient')->with('success', 'Patient details successfully updated');
+
+            }
+
+        } catch (\Exception $e) {
+            return view('error', ['error' => "Edit Patient Failed Hint: Database connection failure", 'error_name' => "Patient Management Error"]);
+        }
     }
 
+    public function deletepatient($id)
+    {
+        try {
+            DB::delete('delete from patients where id = ?', [$id]);
 
-    public function deletepatient($id) {
-        DB::delete('delete from patients where id = ?',[$id]);
-        //return view('managepatients',['patients'=>$patients]);
-        return redirect('viewpatient')->with('success','Patient deleted successfully added');
+            //return view('managepatients',['patients'=>$patients]);
+            return redirect('viewpatient')->with('success', 'Patient deleted successfully added');
+        } catch (\Exception $e) {
+            return view('error', ['error' => "Delete Patient Failed Hint: Database connection failure", 'error_name' => "Patients Management Error"]);
+        }
+    }
 
-     }
+    //Obtaining single patient results
+    public function singlePatient($id){
+        try {
+            $patients = Patient::query()->where('id', $id)->get();
+            $locations = Location::all();
+//        $patients = DB::select('select * from patients where id = ?',[$id]);
+//        return view('patientupdmastate',['patients'=>$patients]);
+            return view('singlepatient')->with(compact('patients', 'locations'));
+//            return dd($patients[0]->prediction);
+//            return dd($patients);
 
-     public function noti(){
-//        $notification = Reminder::whereDate('created_at', now()->subDay(36))->where('status', 'pending')->get();
-         $notification = Reminder::whereDate('reminder_date', now()->addDay(2))->where('status', 'pending')->get();
-
-         foreach ($notification as $reminder) {
-                $reminder->patient->Email;
-//             $reminder->status ="sent";
-//             $reminder->save();
-         }
-
-        return dd($notification);
-
-     }
-
+        } catch (\Exception $e) {
+            return view('error', ['error' => "Patient Not Found Hint: Database connection failure", 'error_name' => "Patient Management Error"]);
+        }
+    }
 }

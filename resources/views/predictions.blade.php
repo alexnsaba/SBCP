@@ -56,6 +56,7 @@ Predictions
 
         /* Side note: I'm using opacity here to make the button look disabled. But you probably shouldn't set disable=true for the button on submit, even to prevent multiple clicks. There could be a server error, network problem or whatever. The user should be able to try to submit the form again any time without reloading the page. Also remember to have screen reader accessible text on your spinner. Take care of accessiblity! */
     </style>
+    @include('message')
 
   <div class="card-body">
       <form id="example" action="/predict" method="POST" enctype="multipart/form-data">
@@ -65,7 +66,7 @@ Predictions
   <div class="form-group">
     <label for="Image">Upload Mammogram Image</label>
 
-      <input type="file" class="form-control form-control-primary" name="image" id="image" accept="image/.pgm" required>
+      <input type="file" class="form-control form-control-primary" name="image" id="image" required>
 
 {{--      <input type="file" name="image" class="form-control form-control-primary" id="image" accept="image/*" onchange="previewFile(this);" required>--}}
 

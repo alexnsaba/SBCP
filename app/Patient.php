@@ -23,5 +23,9 @@ class Patient extends Model
     {
         return $this->hasMany('App\Reminder');
     }
+    public function prediction()
+    {
+        return $this->hasMany('App\Prediction');
+    }
 
 }
